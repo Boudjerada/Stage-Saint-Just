@@ -2,20 +2,25 @@
    
     <div id="intro" class="row"> 
         <div class="col-12">
-            <h3 class="d-flex justify-content-center"><FONT COLOR="black">Bienvenue à la Mairie de votre ville Saint Just en Chaussé</FONT></h3>
+            <h3 class="d-flex justify-content-center"><FONT COLOR="black">Bienvenue à la Mairie de votre ville Saint Just en Chaussée</FONT></h3>
         </div>
     </div>
     
 
     <div id="liens-vert" class="row">
+        
         <div  class="col-5">
+        <br>
+        <br>
             <a class="d-flex justify-content-center mt-2" href="http://saintjustenchaussee.groupehlc.com/" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>" height="30%" width="30%" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>" class="w-25" alt="Image responsive" title="Image promotion">
             </a>
         </div>
         <div class="col-7">
+        <br>
+        <br>
             <a class="d-flex justify-content-center" href="https://www.gouvernement.fr/info-coronavirus" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/covid19");?>" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/covid19");?>" alt="Image responsive" class="w-25" title="Image promotion">
             </a>
         </div>
     </div>
@@ -33,16 +38,16 @@
         <div class="col-12 d-flex justify-content-center">
         
             <a id="ref" href="https://www.caf.fr/" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/caf");?>" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/caf");?>" class="w-50" alt="Image responsive" title="Image promotion">
             </a>
             <a id="ref" href="https://www.pole-emploi.fr/accueil/" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/poleemploi");?>" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/poleemploi");?>" class="w-50" alt="Image responsive" title="Image promotion">
             </a>
             <a id="ref" href="http://www.cc-plateaupicard.fr/" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/plateaupicard");?>" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/plateaupicard");?>" class="w-50" alt="Image responsive" title="Image promotion">
             </a>
             <a id="ref" href="https://www.service-public.fr/" target="_blank">
-                <img src="<?php echo base_url("assets/images/MairieSJ/servicepublic");?>" alt="Image responsive" title="Image promotion">
+                <img src="<?php echo base_url("assets/images/MairieSJ/servicepublic");?>"  class="w-50" alt="Image responsive" title="Image promotion">
             </a>
         </div>
 
@@ -52,8 +57,8 @@
     
     <div id="tab" class="row"> 
         <div class="col-12">
-            <div class="table-responsive" >  <!--tableau responsive-->
-                <table class="table table-hover">
+            <div class="table-responsive">  <!--tableau responsive-->
+                <table class="table table-sm-responsive">
                     <tbody>
                         <tr>
                             <th><h1><a class="btn-danger  d-flex justify-content-center" href="">Documents Administratifs</a></h1></th>
@@ -69,11 +74,38 @@
                             <th><h1><a class="btn-secondary d-flex justify-content-center" href="<?= base_url("index.php/MairieSJ/accueilAgenda");?>">Agenda</a></h1></th>
                             <th><h1><a class="btn-secondary d-flex justify-content-center" href="">CCAS</a></h1></th>
                             <th><h1><a class="btn-secondary d-flex justify-content-center" href="<?php echo base_url("PLAN DE LA VILLE.pdf");?>" target="_blank">Plan de la ville</a></h1></th>
-                    
-                        </tr>   
+                        </tr>
+                        <tr>   
+                            <th><h1><a class="btn-success d-flex justify-content-center" href="<?= base_url("index.php/MairieSJ/police");?>">Police municipal</a></h1></th>
+                            <th><h1><a class="btn-success d-flex justify-content-center" href="<?= base_url("index.php/MairieSJ/environnement");?>">Environnement</a></h1></th>
+                        </th>   
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+     <div class="row">
+        <div id ="nav" class="col-12 d-flex justify-content-center">
+<!--navbar-expand-sm qui indique à partir de quelle dimension (ici sm, donc à plus de 576px) la barre de navigation sera visible entièrement au lieu d'afficher le bouton hamburger.-->
+            <nav  class="navbar navbar-expand-sm  navbar-light"> <!--couleur de la barre de navigation-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar1">
+                    <span class="navbar-toggler-icon"></span>
+                </button> 
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar1">
+                        <ul class="navbar-nav">
+                            <li class="nav-item mr-5 mt-3">
+                                <p><b>Téléphone : </b>03 44 19 29 29</p>
+                            </li>
+                            <li class="nav-item mr-5 mt-3">
+                                <p><b>Site web : </b>https://saintjustenchaussee.groupehlc.com</p>
+                            </li>
+                            <li class="nav-item m-3">
+                                <p><b>Email : </b>com@mairiesaintjustenchaussee.fr</p>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
         </div>
     </div>
 

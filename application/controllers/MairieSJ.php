@@ -349,6 +349,26 @@ $_SESSION["resok"] ="ok";
 
     }
 
+//Police Municipal
+
+    public function police(){
+
+        $head['title'] = "Police municipal";
+
+        $this->load->view('header', $head);
+        $this->load->view('MairieSJ/police');
+
+    }
+
+    public function environnement(){
+
+        $head['title'] = "Environnement";
+
+        $this->load->view('header', $head);
+        $this->load->view('MairieSJ/environnement');
+
+    }
+
 
 
 

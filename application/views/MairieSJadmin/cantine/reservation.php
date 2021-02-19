@@ -57,3 +57,12 @@
 
 </body>
 </html>
+
+
+
+<?php 
+
+$_SESSION["fich"]="";
+unset($_SESSION["fich"]);
+
+?>

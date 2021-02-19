@@ -8,20 +8,25 @@
     <br>
     <br>
     
-    <p>Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant à placer dans le répertoire Cantine/FicheReservationCantine</p>
+    <p>Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement. Par exemple pour AVRIL, réalisé l'opération 2 fois avec mois de réservation AVRIL, l'un avec fichier saint just, l'autre pour exterieur saint just</p>
 
      <?php echo form_open(); ?>
                 <div class="form-group">
                    
-                    <label for="res_mois"><b>Mois de réservation :</b></label><input type="text" class="form-control" name="res_mois" id="res_mois">
+                    <label for="res_mois"><b>Mois de réservation :</b></label><input type="text" class="form-control" name="res_mois" id="res_mois" value="<?php echo set_value('res_mois');?>">
                     <?php echo form_error('res_mois'); // affiche l'erreur du champs nom obligatoire?>
-                    
-                    
-                </div>
-
+                    <br>
+                    <label for="file"><b>Fichier PDF de réservation :</b></label>
+                    <br>
+                    <input type="file" name="fichier" id="fichier">
+                    <br>
+                    <br>
+                    <?php if  (isset ($_SESSION["fich"])){?> <span id="alerte-mail" class="alert alert-danger"><?=$_SESSION['fich'];?></span><?php }?>
+                    <br>
+                </div>  
                 <div class="d-flex justify-content-center" name ="actionProduit">
                     <button class="btn-primary ml-1" type="submit" onclick="verif();">Enregistrer</button>
-                    <a class="btn-primary ml-2"   href="<?= base_url("index.php/AdminStJust/menu");?>">Retour</a>
+                    <a class="btn-primary ml-2"   href="<?= base_url("index.php/AdminStJust/reservation");?>">Retour</a>
                 </div>
 
     </form>
@@ -50,3 +55,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php 
+
+$_SESSION["fich"]="";
+unset($_SESSION["fich"]);
+
+?>

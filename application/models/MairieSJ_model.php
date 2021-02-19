@@ -153,6 +153,16 @@ public function serv($id){
         $res = $requete->row();
         return $res;            
     }
+//Test existence enregistrement
+
+    public function TestreservationEnr($res){
+
+
+        $requete = $this->db->query("SELECT * FROM reservationcantin  WHERE res_mois= ?", $res);
+        $nbres = $requete->row();
+
+        return (!empty($nbres));
+    }
 
 
 

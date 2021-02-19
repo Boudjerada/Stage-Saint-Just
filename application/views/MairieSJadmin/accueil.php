@@ -13,8 +13,8 @@
                     En cas de manquement à ces obligations, les citoyens pourront se tourner vers l'autorité référente (Commission nationale de l'informatique et des libertés ou Cnil en France). Les sanctions encourues sont assez lourdes puisqu'elles peuvent aller jusqu'à 20 millions d'euros.<br>
                     
                     </div>
-                    <a href="#" onclick="voirsuite();" id="voirsuite">Voir la suite...</a>
-                    <a href="#" onclick="replier();" style="display:none;" id="replier">Replier...</a>
+                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="voirsuite();" id="voirsuite">Voir la suite...</a></h4>
+                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="replier();" style="display:none;" id="replier">Replier...</a></h4>
         
 
 <br>
