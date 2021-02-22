@@ -884,19 +884,48 @@ public function ajoutMenu(){
             else
                 {
                 
-                $this->db->insert('Menu', $data);
+               // On créé un tableau de configuration pour l'upload
+               $config['upload_path'] = './Cantine/Menu/'; // chemin où sera stocké le fichier
 
-                // Redirection sur la page liste evenement
-                redirect("AdminStJust/menu");
-               }
-        } 
-    else{ // 1er appel de la page: affichage du formulaire 
-            $this->load->view('header', $head);
-            $this->load->view('MairieSJadmin/cantine/ajoutMenu');
-              
-        }
-    
-    }
+               // On indique les types autorisés (ici pour des images)
+               $config['allowed_types'] = 'pdf'; 
+
+               $config['max_size'] = 50000;
+               $config['max_width'] = 50000;
+               $config['max_height'] = 50000;
+
+           
+        // On charge la librairie 'upload'
+               $this->load->library('upload');
+
+        // On initialise la config 
+               $this->upload->initialize($config);
+           
+       //Pourrécupérer (dans un tableau PHP) les informations d'origine sur le fichier téléchargé.
+               $aUploadDatas = $this->upload->data(); 
+         
+       // La méthode do_upload() effectue les validations sur l'attribut HTML 'name' ('fichier' dans notre formulaire) et si OK renomme et déplace le fichier tel que configuré
+               if ( ! $this->upload->do_upload('fichier')){
+                   
+                   $_SESSION['fich']='Aucun fichier joint ou le téléchargement du fichier à échoué, le format du fichier accépté est pdf ';
+                   $this->load->view('header', $head);
+                   $this->load->view('MairieSJadmin/cantine/ajoutMenu');
+                   }
+               else{
+                        $this->db->insert('Menu', $data);
+                       // Redirection sur la page liste evenement
+                        redirect("AdminStJust/menu");
+                    }
+            }
+       } 
+   else{ // 1er appel de la page: affichage du formulaire 
+    $this->load->view('header', $head);
+    $this->load->view('MairieSJadmin/cantine/ajoutMenu');
+             
+       }
+   
+   
+   }
 
 //Fiche réservation cantine
     public function reservation(){
@@ -974,10 +1003,11 @@ public function ajoutRes(){
                 // On indique les types autorisés (ici pour des images)
                 $config['allowed_types'] = 'pdf'; 
 
-                $config['max_size'] = 5000;
-                $config['max_width'] = 5000;
-                $config['max_height'] = 5000;
+                $config['max_size'] = 50000;
+                $config['max_width'] = 50000;
+                $config['max_height'] = 50000;
 
+            
          // On charge la librairie 'upload'
                 $this->load->library('upload');
 
@@ -996,7 +1026,7 @@ public function ajoutRes(){
                     }
                 else{
                     $this->load->model('MairieSJ_model');
-                    $res = $this->imput->post('res_mois');
+                    $res = $this->input->post('res_mois');
                     $bool = $this->MairieSJ_model->TestreservationEnr($res);
                     
                     if (!($bool)){

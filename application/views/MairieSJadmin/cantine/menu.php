@@ -37,7 +37,7 @@
 
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
-        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutMenu');?>">Ajout 1 semaine de menu (Copier le fichier pdf correspondant dans le répertoire Cantine/Menu)</a>
+        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutMenu');?>">Ajout 1 semaine de menu</a>
         <a class="btn ml-4 btn-success" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a>
     </div>
 </div>
@@ -63,3 +63,12 @@
 
 </body>
 </html>
+
+
+
+<?php 
+
+$_SESSION["fich"]="";
+unset($_SESSION["fich"]);
+
+?>

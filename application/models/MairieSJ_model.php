@@ -158,7 +158,7 @@ public function serv($id){
     public function TestreservationEnr($res){
 
 
-        $requete = $this->db->query("SELECT * FROM reservationcantin  WHERE res_mois= ?", $res);
+        $requete = $this->db->query("SELECT * FROM reservationcantine  WHERE res_mois= ?", $res);
         $nbres = $requete->row();
 
         return (!empty($nbres));

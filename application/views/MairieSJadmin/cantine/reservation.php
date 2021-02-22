@@ -23,8 +23,8 @@
         <tbody>
 
             <?php foreach ($reservation as $row){
-                $stjust= $row->res_mois. " st just";
-                $ext=$row->res_mois." EXT";
+                $stjust= $row->res_mois. "_st_just";
+                $ext=$row->res_mois."_EXT";
                 ?>
                
             <tr>
@@ -39,9 +39,16 @@
     </table>
 </div>
 
+
+<div class="row"> 
+    <div class="col-12">
+        <p><FONT color="red">Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement. Par exemple pour AVRIL, réalisé l'opération 2 fois avec mois de réservation AVRIL, l'un avec fichier saint just, l'autre pour exterieur saint just</FONT></p>
+    </div>
+</div>
+
 <div class="row"> 
     <div class="col-12  d-flex justify-content-center">
-        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutRes');?>">Ajout 1 mois de réservation(Copier le fichier pdf correspondant dans le répertoire Cantine/FicheReservationCantine)</a>
+        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutRes');?>">Ajout Réservation</a>
         <a class="ml-3 btn btn-success" href="<?= base_url('index.php/AdminStJust/accueil');?>">Retour</a>
     </div>
 </div>

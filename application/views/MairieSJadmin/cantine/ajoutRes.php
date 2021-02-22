@@ -10,7 +10,7 @@
     
     <p>Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement. Par exemple pour AVRIL, réalisé l'opération 2 fois avec mois de réservation AVRIL, l'un avec fichier saint just, l'autre pour exterieur saint just</p>
 
-     <?php echo form_open(); ?>
+     <?php echo form_open_multipart(); ?>
                 <div class="form-group">
                    
                     <label for="res_mois"><b>Mois de réservation :</b></label><input type="text" class="form-control" name="res_mois" id="res_mois" value="<?php echo set_value('res_mois');?>">

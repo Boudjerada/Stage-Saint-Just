@@ -22,7 +22,7 @@
    <div class="row">
         <div id ="nav" class="col-12 d-flex justify-content-center">
 <!--navbar-expand-sm qui indique à partir de quelle dimension (ici sm, donc à plus de 576px) la barre de navigation sera visible entièrement au lieu d'afficher le bouton hamburger.-->
-            <nav  class="navbar navbar-expand-sm  navbar-light"> <!--couleur de la barre de navigation-->
+            <nav  class="navbar navbar-expand-lg  navbar-light"> <!--couleur de la barre de navigation-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar1">
                     <span class="navbar-toggler-icon"></span>
                 </button> 
