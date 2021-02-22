@@ -14,6 +14,7 @@
     <br>
 
     <div id="RGPD">
+
         <h3 class="d-flex justify-content-center">REGLEMENT DE LA CANTINE</h3>
         
         <h6 class="d-flex justify-content-center">Dispositions générales :</h6>
