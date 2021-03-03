@@ -35,8 +35,8 @@
                 
                 </div>  
                 <div class="d-flex justify-content-center" name ="actionProduit">
-                    <button class="btn-primary ml-1" type="submit" onclick="verif();">Modifier</button>
-                    <a class="btn-primary ml-2"   href="<?= base_url("index.php/AdminStJust/planning");?>">Retour</a>
+                    <h1><button class="btn btn-primary ml-1" type="submit" onclick="verif();">Modifier</button></h1>
+                    <h1><a class="btn btn-primary ml-2"   href="<?= base_url("index.php/AdminStJust/planning");?>">Retour</a></h1>
                 </div>
 
     </form>

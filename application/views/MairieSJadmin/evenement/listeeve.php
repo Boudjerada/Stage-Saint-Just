@@ -40,8 +40,8 @@
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
             
-            <h2><a class="btn-success" href="<?= base_url("index.php/AdminStJust/ajouteve");?>">Nouvel Enregistrement</a></h2>
-            <h2><a class="btn-success ml-5" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h2>
+            <h2><a class="btn btn-success" href="<?= base_url("index.php/AdminStJust/ajouteve");?>">Nouvel Enregistrement</a></h2>
+            <h2><a class="btn btn-success ml-3" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h2>
           
         </div>
     </div>

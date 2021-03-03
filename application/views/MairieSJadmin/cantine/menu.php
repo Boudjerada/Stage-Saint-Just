@@ -39,8 +39,8 @@
 
 <div class="row">
     <div class="col-12 d-flex justify-content-center">
-        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutMenu');?>">Ajout 1 semaine de menu</a>
-        <a class="btn ml-4 btn-success" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a>
+        <h1><a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutMenu');?>">Ajout 1 semaine de menu</a></h1>
+        <h1><a class="btn ml-3 btn-success" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h1>
     </div>
 </div>
 

@@ -35,8 +35,8 @@
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
             
-            <h4><a class="btn-success" href="<?= base_url("index.php/AdminStJust/ajoutassoc");?>">Nouvel Enregistrement</a></h4>
-            <h4><a class="btn-success ml-5" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h4>
+            <h1><a class="btn btn-success" href="<?= base_url("index.php/AdminStJust/ajoutassoc");?>">Nouvel Enregistrement</a></h1>
+            <h1><a class="btn btn-success ml-3" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h1>
           
         </div>
     </div>

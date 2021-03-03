@@ -192,6 +192,8 @@ class AdminStJust extends CI_Controller {
 
         $head['title']= "Modification mot de passe";
 
+        $this->load->model('MairieSJ_model');
+
         if ($this->input->post()){ // 2ème appel de la page: traitement du formulaire
       
             $data = $this->input->post();
@@ -245,8 +247,10 @@ class AdminStJust extends CI_Controller {
              
                         $data['us_mp']=$password_hash;
 
-                        $this->db->where('us_log',$_SESSION['log']);
-                        $this->db->update('administration', $data);
+
+                        $this->MairieSJ_model->ModifEnr($data,'administration','us_log',$_SESSION['log']);
+                        //$this->db->where('us_log',$_SESSION['log']);
+                        //$this->db->update('administration', $data);
 
                         $_SESSION["mdpmodif"]="ok";
                         
@@ -323,9 +327,9 @@ public function modifserv($id){
                * avant select(), insert() ou update()
                * dans cette configuration sur plusieurs lignes 
                */
-                
-            $this->db->where('serv_id',$id);
-            $this->db->update('serviceMairie', $data);
+            $this->MairieSJ_model->ModifEnr($data,'serviceMairie','serv_id',$id);   
+            //$this->db->where('serv_id',$id);
+            //$this->db->update('serviceMairie', $data);
 
             // Redirection sur la page contact association
             redirect("AdminStJust/listecontactsmairie");
@@ -411,9 +415,10 @@ public function suppserv($id){
 
     if ($this->input->post()) 
     { // 2ème appel de la page: traitement du formulaire
-          //$data = $this->input->post();
-        $this->db->where('serv_id',$id);
-        $this->db->delete('serviceMairie');
+         
+        $this->MairieSJ_model->SupEnr('serviceMairie','serv_id',$id);
+        //$this->db->where('serv_id',$id);
+        //$this->db->delete('serviceMairie');
         
         // Redirection sur la page contact association
         redirect("AdminStJust/listecontactsmairie");
@@ -485,9 +490,10 @@ public function suppserv($id){
                    * avant select(), insert() ou update()
                    * dans cette configuration sur plusieurs lignes 
                    */
-                    
-                $this->db->where('ass_id',$id);
-                $this->db->update('association', $data);
+                
+                $this->MairieSJ_model->ModifEnr($data,'association','ass_id',$id);    
+                //$this->db->where('ass_id',$id);
+                //$this->db->update('association', $data);
 
                 // Redirection sur la page contact association
                 redirect("AdminStJust/listecontactassociation");
@@ -572,9 +578,9 @@ public function suppserv($id){
     
         if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
-              //$data = $this->input->post();
-            $this->db->where('ass_id',$id);
-            $this->db->delete('association');
+            $this->MairieSJ_model->SupEnr('association','ass_id',$id);
+            //$this->db->where('ass_id',$id);
+            //$this->db->delete('association');
             
             // Redirection sur la page contact association
             redirect("AdminStJust/listecontactassociation");
@@ -621,9 +627,9 @@ public function suppserv($id){
 
         if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
-          //$data = $this->input->post();
-            $this->db->where('eve_id',$id);
-            $this->db->delete('Evenements');
+            $this->MairieSJ_model->SupEnr('Evenements','eve_id',$id);
+            //$this->db->where('eve_id',$id);
+            //$this->db->delete('Evenements');
         
         // Redirection sur la page contact association
             redirect("AdminStJust/evenement");
@@ -685,9 +691,9 @@ public function modifeve($id){
             }
         else
             { 
-                
-                $this->db->where('eve_id',$id);
-                $this->db->update('Evenements', $data);
+            $this->MairieSJ_model->ModifEnr($data,'Evenements','eve_id',$id);  
+            //$this->db->where('eve_id',$id);
+            //$this->db->update('Evenements', $data);
 
             // Redirection sur la page contact association
             redirect("AdminStJust/evenement");
@@ -818,9 +824,9 @@ public function modifeve($id){
               }
           else
               { 
-                  
-                  $this->db->where('pla_id',$id);
-                  $this->db->update('PlanningRestauration', $data);
+                  $this->MairieSJ_model->ModifEnr($data,'PlanningRestauration','pla_id',$id);
+                  //$this->db->where('pla_id',$id);
+                  //$this->db->update('PlanningRestauration', $data);
   
               // Redirection sur la page planning
               redirect("AdminStJust/planning");
@@ -868,9 +874,9 @@ public function suppMenu($id){
 
     if ($this->input->post()) 
     { // 2ème appel de la page: traitement du formulaire
-          //$data = $this->input->post();
-        $this->db->where('menu_id',$id);
-        $this->db->delete('Menu');
+        $this->MairieSJ_model->SupEnr('Menu','menu_id',$id);
+        //$this->db->where('menu_id',$id);
+        //$this->db->delete('Menu');
         
         // Redirection sur la page contact association
         redirect("AdminStJust/menu");
@@ -1005,9 +1011,9 @@ public function ajoutMenu(){
 
         if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
-          //$data = $this->input->post();
-            $this->db->where('res_id',$id);
-            $this->db->delete('reservationcantine');
+            $this->MairieSJ_model->SupEnr('reservationcantine','res_id',$id);
+            //$this->db->where('res_id',$id);
+            //$this->db->delete('reservationcantine');
         
         // Redirection sur la page contact association
             redirect("AdminStJust/reservation");

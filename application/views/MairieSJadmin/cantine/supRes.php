@@ -14,7 +14,9 @@
     
             <h1 class="d-flex justify-content-center"><b><?=$reservation->res_mois?></b></h1>
             <br>
-            <h4 >Etes vous sûr de vouloir supprimer la semaine &nbsp<b><?=$reservation->res_mois?></b>&nbspde la base de données Réservation ?<h4>
+            <div class="d-flex justify-content-center">
+                <h4>Etes vous sûr de vouloir supprimer la semaine &nbsp<b><?=$reservation->res_mois?></b>&nbspde la base de données Réservation ?<h4>
+            </div>
 
             <br>
             <br>
@@ -24,8 +26,8 @@
                 <input type="hidden" name="ass_id" value="<?php echo $reservation->res_id; ?>">
                 
                 <div class="d-flex justify-content-center" name = actionassociation>    
-                    <button class="btn-primary ml-1" type="submit" onclick="verif();">Supprimer</button>
-                    <a class="btn-primary ml-2"   href="<?= base_url("index.php/AdminStJust/reservation");?>">Retour</a>
+                    <h1><button class="btn btn-primary" type="submit" onclick="verif();">Supprimer</button></h1>
+                    <h1><a class="btn btn-primary ml-3"   href="<?= base_url("index.php/AdminStJust/reservation");?>">Retour</a></h1>
                 </div>
               
         </form>

@@ -172,9 +172,24 @@ public function serv($id){
 
 //Ajout Enregistrement
 
-public function insEnr($data, $nomBase){
-    $this->db->insert($nomBase, $data);
-}
+    public function insEnr($data, $nomBase){
+        $this->db->insert($nomBase, $data);
+    }
+
+//Modification Enregistrement avec 1 attribut de séléction
+    public function ModifEnr($data,$nomBase,$Nomcolonne,$Valeurcolonne){
+        
+        $this->db->where($Nomcolonne,$Valeurcolonne);
+        $this->db->update($nomBase, $data);
+    }
+
+//Suppression d'un Enregistrement avec 1 attribut de séléction
+
+    public function SupEnr($nomBase,$Nomcolonne,$Valeurcolonne){
+        
+        $this->db->where($Nomcolonne,$Valeurcolonne);
+        $this->db->delete($nomBase);
+    }
 
 
 

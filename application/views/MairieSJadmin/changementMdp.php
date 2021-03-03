@@ -43,8 +43,8 @@
                 <br>
             </div>
             <div class="d-flex justify-content-center" name = "actioninscription">
-                <button class="btn btn-dark" type="submit"  onclick="verif();">Modifier</button>
-                <a  class="btn btn-primary ml-3" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a>
+                <h1><button class="btn btn btn-dark" type="submit"  onclick="verif();">Modifier</button></h1>
+                <h1><a  class="btn btn btn-primary ml-3" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h1>
             </div>
         </form>
         
