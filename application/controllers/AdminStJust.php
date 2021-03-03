@@ -48,14 +48,14 @@ class AdminStJust extends CI_Controller {
                     }
                 else{$_SESSION["messlog3"]= "Mot de passe incorrect";
                     
-                    $this->load->view('header', $head);
+                    $this->load->view('header2', $head);
                     $this->load->view('MairieSJadmin/index');
                 }
             }
             else{
                 $_SESSION["messlog2"]= "Vous êtes pas connu comme Agent de la mairie de Saint Just en Chaussé";
                
-                $this->load->view('header', $head);
+                $this->load->view('header2', $head);
                 $this->load->view('MairieSJadmin/index');
 
                 }
@@ -64,7 +64,7 @@ class AdminStJust extends CI_Controller {
         }
       //formulaire vierge
         else{
-            $this->load->view('header', $head);
+            $this->load->view('header2', $head);
             $this->load->view('MairieSJadmin/index');
         }
 }
@@ -95,16 +95,16 @@ class AdminStJust extends CI_Controller {
         
             $data = $this->input->post();
 
-            $_SESSION["status"]= $this->input->post('us_status');
+            $_SESSION["stat"]= $this->input->post('us_status');
 
 
 
          // Définition des filtres, ici une valeur doit avoir été saisie pour le champ 'pro_ref'
-            $this->form_validation->set_rules('us_nom', 'Nom', 'required', array("required" => "La %s est obligatoire."));
+            $this->form_validation->set_rules('us_nom', 'Nom', 'required|max_length[15]', array("required" => "La %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');  
       
-            $this->form_validation->set_rules('us_prenom', 'Prenom', 'required', array("required" => "Le %s est obligatoire."));
+            $this->form_validation->set_rules('us_prenom', 'Prenom', 'required|max_length[15]', array("required" => "Le %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
        
@@ -113,17 +113,15 @@ class AdminStJust extends CI_Controller {
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            $this->form_validation->set_rules('us_log', 'Login', 'required|min_length[6]', array("required" => "Le %s est obligatoire.",   "min_length"  => "Le %s n'est pas valide, il doit faire 6 caractères au moins"));
+            $this->form_validation->set_rules('us_log', 'Login', 'required|min_length[6]|max_length[15]', array("required" => "Le %s est obligatoire.",   "min_length"  => "Le %s n'est pas valide, il doit faire 6 caractères au moins", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            $this->form_validation->set_rules('us_mp', 'Mot de passe', 'required|min_length[8]', array("required" => "Le %s est obligatoire.",   "min_length"  => "Le %s n'est pas valide, il doit faire 8 caractères au moins"));
+            $this->form_validation->set_rules('us_mp', 'Mot de passe', 'required|min_length[8]|max_length[15]', array("required" => "Le %s est obligatoire.",   "min_length"  => "Le %s n'est pas valide, il doit faire 8 caractères au moins", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-            $this->form_validation->set_rules('us_status', 'Status', 'required', array("required" => "Le %s est obligatoire."));
-            //Mise en page personaliser du message d'erreur
-            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+         
 
          
 
@@ -170,15 +168,13 @@ class AdminStJust extends CI_Controller {
             $data['us_mp']=$password_hash;
              
             unset($data["us_mp2"]);
+
+            $this->MairieSJ_model->insEnr($data,'administration');
              
-            $this->db->insert('administration', $data);
+            //$this->db->insert('administration', $data);
              
             $_SESSION["insok"] = ok;
             
-            //Detrusction de cette variable pour un non selected, l'enregistrement étant réussi
-            $_SESSION["status"]="";
-            unset($_SESSION["status"]);
-
             redirect("AdminStJust/enregistrementAgent");
         }
    
@@ -200,11 +196,11 @@ class AdminStJust extends CI_Controller {
       
             $data = $this->input->post();
 
-            $this->form_validation->set_rules('us_mp3', 'Mot de passe', 'required', array("required" => "Le %s est obligatoire."));
+            $this->form_validation->set_rules('us_mp3', 'Mot de passe', 'required|max_length[15]', array("required" => "Le %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
             //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             
-            $this->form_validation->set_rules('us_mp', 'Mot de passe', 'required|min_length[8]', array("required" => "Le nouveau  %s est obligatoire.",   "min_length"  => "Le nouveau %s n'est pas valide, il doit faire 8 caractères au moins"));
+            $this->form_validation->set_rules('us_mp', 'Mot de passe', 'required|min_length[8]|max_length[15]', array("required" => "Le nouveau  %s est obligatoire.",   "min_length"  => "Le nouveau %s n'est pas valide, il doit faire 8 caractères au moins", "max_length" => "Le %s n'est pas valide, il doit faire 15 caractères maximum"));
             //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
@@ -299,8 +295,16 @@ public function modifserv($id){
 
         $data = $this->input->post();
 
-    // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_nom'
-        $this->form_validation->set_rules('serv_nom', 'Nom Service', 'required', array("required" => "Le champ %s est obligatoire."));
+    // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_nom'
+        $this->form_validation->set_rules('serv_nom', 'Nom Service', 'required|max_length[50]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 50 caractères maximum"));
+     //Mise en page personaliser du message d'erreur
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_tel'
+        $this->form_validation->set_rules('serv_tel', 'Téléphone service', 'max_length[30]', array("max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));
+     //Mise en page personaliser du message d'erreur
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_mail'
+        $this->form_validation->set_rules('serv_mail', 'Mail Service', 'valid_email', array( "valid_email" => "Le format du %s n'est pas valide"));
      //Mise en page personaliser du message d'erreur
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     
@@ -341,15 +345,25 @@ public function modifserv($id){
     public function ajoutserv(){
 
         $head['title']= "Ajout contact service Mairie";
+
+        $this->load->model('MairieSJ_model');
     
         if ($this->input->post()) 
             { // 2ème appel de la page: traitement du formulaire
     
             $data = $this->input->post();
 
-        // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_nom'
-            $this->form_validation->set_rules('serv_nom', 'Nom Service', 'required', array("required" => "Le champ %s est obligatoire."));
-         //Mise en page personaliser du message d'erreur
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_nom'
+            $this->form_validation->set_rules('serv_nom', 'Nom Service', 'required|max_length[50]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 50 caractères maximum"));
+        //Mise en page personaliser du message d'erreur
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_tel'
+            $this->form_validation->set_rules('serv_tel', 'Téléphone service', 'max_length[30]', array("max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));
+        //Mise en page personaliser du message d'erreur
+            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'serv_mail'
+            $this->form_validation->set_rules('serv_mail', 'Mail Service', 'valid_email', array( "valid_email" => "Le format du %s n'est pas valide"));
+        //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         
         
@@ -368,8 +382,8 @@ public function modifserv($id){
                    * dans cette configuration sur plusieurs lignes 
                    */
                     
-                
-                $this->db->insert('serviceMairie', $data);
+                $this->MairieSJ_model->insEnr($data,'serviceMairie');
+                //$this->db->insert('serviceMairie', $data);
 
                 // Redirection sur la page contact association
                 redirect("AdminStJust/listecontactsmairie");
@@ -446,9 +460,12 @@ public function suppserv($id){
             $data = $this->input->post();
 
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_nom'
-            $this->form_validation->set_rules('ass_nom', 'Nom association', 'required', array("required" => "Le champ %s est obligatoire."));
-         //Mise en page personaliser du message d'erreur
+            $this->form_validation->set_rules('ass_nom', 'Nom association', 'required|max_length[50]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 50 caractères maximum"));
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+        // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_tel'
+        $this->form_validation->set_rules('ass_tel', 'Téléphone association', 'max_length[30]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         
         // Définition du filtre, ici la syntaxe du mail 
             $this->form_validation->set_rules('ass_mail', 'Mail Association', 'valid_email', array("valid_email"  => "Le format du %s n'est pas valide"));
@@ -489,6 +506,8 @@ public function suppserv($id){
     public function ajoutassoc(){
 
         $head['title']= "Ajout contact association";
+
+        $this->load->model('MairieSJ_model');
         
         if ($this->input->post()) 
             { // 2ème appel de la page: traitement du formulaire
@@ -498,6 +517,11 @@ public function suppserv($id){
             // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_nom'
                 $this->form_validation->set_rules('ass_nom', 'Nom association', 'required', array("required" => "Le champ %s est obligatoire."));
              //Mise en page personaliser du message d'erreur
+                $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+
+               // Définition du filtre, ici la valeur est obligatoire pour le champ 'ass_tel'
+                $this->form_validation->set_rules('ass_tel', 'Téléphone association', 'max_length[30]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));
                 $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
             
             // Définition du filtre, ici la syntaxe du mail 
@@ -519,8 +543,9 @@ public function suppserv($id){
                        * dans cette configuration sur plusieurs lignes 
                        */
                         
+                    $this->MairieSJ_model->insEnr($data,'association');
+                    //$this->db->insert('association', $data);
                     
-                    $this->db->insert('association', $data);
     
                     // Redirection sur la page contact association
                     redirect("AdminStJust/listecontactassociation");
@@ -628,19 +653,29 @@ public function modifeve($id){
         $data = $this->input->post();
 
     // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_date'
-        $this->form_validation->set_rules('eve_date', 'Date manifestation', 'required', array("required" => "Le champ %s est obligatoire."));
+        $this->form_validation->set_rules('eve_date', 'Date manifestation', 'required|max_length[30]', array("required" => "Le champ %s est obligatoire.", "max_length" => "La %s n'est pas valide, elle doit faire 30 caractères maximum"));
      //Mise en page personaliser du message d'erreur
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     
-    // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_date'
-        $this->form_validation->set_rules('eve_manif', 'Manifestation', 'required', array("required" => "Le champ %s est obligatoire."));
+    // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_manif'
+        $this->form_validation->set_rules('eve_manif', 'Manifestation', 'required|max_length[50]', array("required" => "Le champ %s est obligatoire.", "max_length" => "La %s n'est pas valide, elle doit faire 50 caractères maximum"));;
     //Mise en page personaliser du message d'erreur
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-         // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_date'
-        $this->form_validation->set_rules('eve_Orga', 'Nom organisteur', 'required', array("required" => "Le champ %s est obligatoire."));
-         //Mise en page personaliser du message d'erreur
+    // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_Orga'
+        $this->form_validation->set_rules('eve_Orga', 'Nom organisteur', 'required|max_length[40]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 40 caractères maximum"));;
+    //Mise en page personaliser du message d'erreur
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+    // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_tel'
+    $this->form_validation->set_rules('eve_tel', 'Téléphone organisteur', 'max_length[30]"', array( "max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));;
+    //Mise en page personaliser du message d'erreur
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+
+    // Définition du filtre, ici la syntaxe du mail 
+        $this->form_validation->set_rules('eve_contact', 'Mail contact', 'valid_email', array("valid_email"  => "Le format du %s n'est pas valide"));
+     //Mise en page personaliser du message d'erreur
+        $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>'); 
 
         if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
@@ -673,6 +708,8 @@ public function modifeve($id){
     public function ajouteve(){
 
     $head['title']= "Ajout Manifestation";
+
+    $this->load->model('MairieSJ_model');
     
     if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
@@ -680,19 +717,28 @@ public function modifeve($id){
             $data = $this->input->post();
 
          // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_date'
-            $this->form_validation->set_rules('eve_date', 'Date manifestation', 'required', array("required" => "Le champ %s est obligatoire."));
-         //Mise en page personaliser du message d'erreur
-            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-        
-        // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_manif'
-            $this->form_validation->set_rules('eve_manif', 'Manifestation', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('eve_date', 'Date manifestation', 'required|max_length[30]', array("required" => "Le champ %s est obligatoire.", "max_length" => "La %s n'est pas valide, elle doit faire 30 caractères maximum"));
         //Mise en page personaliser du message d'erreur
-            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-    
-             // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_Orga'
-            $this->form_validation->set_rules('eve_Orga', 'Nom organisteur', 'required', array("required" => "Le champ %s est obligatoire."));
-             //Mise en page personaliser du message d'erreur
-            $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+       
+       // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_manif'
+           $this->form_validation->set_rules('eve_manif', 'Manifestation', 'required|max_length[50]', array("required" => "Le champ %s est obligatoire.", "max_length" => "La %s n'est pas valide, elle doit faire 50 caractères maximum"));;
+       //Mise en page personaliser du message d'erreur
+           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+   
+       // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_Orga'
+           $this->form_validation->set_rules('eve_Orga', 'Nom organisteur', 'required|max_length[40]', array("required" => "Le champ %s est obligatoire.", "max_length" => "Le %s n'est pas valide, il doit faire 40 caractères maximum"));;
+       //Mise en page personaliser du message d'erreur
+           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+   
+       // Définition du filtre, ici la valeur est obligatoire pour le champ 'eve_tel'
+           $this->form_validation->set_rules('eve_tel', 'Téléphone organisteur', 'max_length[30]"', array( "max_length" => "Le %s n'est pas valide, il doit faire 30 caractères maximum"));;
+       //Mise en page personaliser du message d'erreur
+           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
+   
+       // Définition du filtre, ici la syntaxe du mail 
+           $this->form_validation->set_rules('eve_contact', 'Mail contact', 'valid_email', array("valid_email"  => "Le format du %s n'est pas valide"));
+        //Mise en page personaliser du message d'erreur
 
             if ($this->form_validation->run() == FALSE)
                
@@ -703,8 +749,8 @@ public function modifeve($id){
                 }
             else
                 {
-                
-                $this->db->insert('Evenements', $data);
+                $this->MairieSJ_model->insEnr($data,'Evenements');
+                //$this->db->insert('Evenements', $data);
 
                 // Redirection sur la page liste evenement
                 redirect("AdminStJust/evenement");
@@ -754,12 +800,12 @@ public function modifeve($id){
           $data = $this->input->post();
   
       // Définition du filtre, ici la valeur est obligatoire pour le champ 'pla_annee'
-          $this->form_validation->set_rules('pla_annee', 'Année', 'required', array("required" => "Le champ %s est obligatoire."));
+          $this->form_validation->set_rules('pla_annee', 'Année', 'required|max_length[4]', array("required" => "Le champ %s est obligatoire.", "max_length" => "4 caractères pour l'Année"));
        //Mise en page personaliser du message d'erreur
           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
       
       // Définition du filtre, ici la valeur est obligatoire pour le champ 'pla_date'
-          $this->form_validation->set_rules('pla_date', 'Date', 'required', array("required" => "Le champ %s est obligatoire."));
+          $this->form_validation->set_rules('pla_date', 'Date', 'required|max_length[10]', array("required" => "Le champ %s est obligatoire.", "max_length" => "10 caractères la %s JJ/MM/AAAA"));
       //Mise en page personaliser du message d'erreur
           $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
   
@@ -844,33 +890,35 @@ public function ajoutMenu(){
 
     $head['title']= "Ajout Menu 1 semaine";
     
+    $this->load->model('MairieSJ_model');
+    
     if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
     
             $data = $this->input->post();
 
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'debut'
-            $this->form_validation->set_rules('debut', 'Numéro jour début de semaine', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('debut', 'Numéro jour début de semaine', 'required|max_length[3]', array("required" => "Le champ %s est obligatoire.", "max_length" => "3 caractères Maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'fin'
-            $this->form_validation->set_rules('fin', 'Numéro jour fin de semaine', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('fin', 'Numéro jour fin de semaine', 'required|max_length[3]', array("required" => "Le champ %s est obligatoire.", "max_length" => "3 caractères Maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'moisd'
-            $this->form_validation->set_rules('moisd', 'Mois début de semaine', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('moisd', 'Mois début de semaine', 'required|max_length[10]', array("required" => "Le champ %s est obligatoire.", "max_length" => "10 caractères Maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
          // Définition du filtre, ici la valeur est obligatoire pour le champ 'moisf'
-             $this->form_validation->set_rules('moisf', 'Mois fin de semaine', 'required', array("required" => "Le champ %s est obligatoire."));
+             $this->form_validation->set_rules('moisf', 'Mois fin de semaine', 'required|max_length[10]', array("required" => "Le champ %s est obligatoire.", "max_length" => "10 caractères Maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
          // Définition du filtre, ici la valeur est obligatoire pour le champ 'annee'
-            $this->form_validation->set_rules('annee', 'Annee', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('annee', 'Annee', 'required|max_length[4]', array("required" => "Le champ %s est obligatoire.", "max_length" => "4 caractères Maximum"));
          //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
@@ -912,7 +960,9 @@ public function ajoutMenu(){
                    $this->load->view('MairieSJadmin/cantine/ajoutMenu');
                    }
                else{
-                        $this->db->insert('Menu', $data);
+                        $this->MairieSJ_model->insEnr($data,'Menu');
+                        //$this->db->insert('Menu', $data);
+
                        // Redirection sur la page liste evenement
                         redirect("AdminStJust/menu");
                     }
@@ -975,6 +1025,8 @@ public function ajoutMenu(){
 public function ajoutRes(){
 
     $head['title']= "Ajout 1 mois de réservation";
+
+    $this->load->model('MairieSJ_model');
     
     if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
@@ -982,7 +1034,7 @@ public function ajoutRes(){
             $data = $this->input->post();
 
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'debut'
-            $this->form_validation->set_rules('res_mois', 'Mois de réservation', 'required', array("required" => "Le champ %s est obligatoire."));
+            $this->form_validation->set_rules('res_mois', 'Mois de réservation', 'required|max_length[10]', array("required" => "Le champ %s est obligatoire.", "max_length" => "10 caractères Maximum"));
         //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
         
@@ -1030,7 +1082,10 @@ public function ajoutRes(){
                     $bool = $this->MairieSJ_model->TestreservationEnr($res);
                     
                     if (!($bool)){
-                        $this->db->insert('reservationcantine', $data);
+
+                        $this->MairieSJ_model->insEnr($data,'reservationcantine');
+                        //$this->db->insert('reservationcantine', $data);
+                        
                         // Redirection sur la page liste evenement
                         redirect("AdminStJust/reservation");
                         }
@@ -1050,6 +1105,10 @@ public function ajoutRes(){
     
     }
 
+
+
+
+    
 
 }
 

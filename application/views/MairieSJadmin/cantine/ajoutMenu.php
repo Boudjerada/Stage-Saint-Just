@@ -1,4 +1,5 @@
-<br>
+<?php if (isset($_SESSION['log'])){?>
+    <br>
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
@@ -8,7 +9,7 @@
     <br>
     <br>
     
-    <p>Les jour sont a ecrire entre 1 et 31, sauf le premier du mois à ecrire 1ER. Les mois sont a écrire en lettre Majuscules sans accent. Enfin l'année a écrire en 4 chiffres Ceci pour compatibilité avec l'ouverture du fichier pdf correspondant à placer dans le répertoire Cantine/Menu</p>
+    <p>Les jours sont a ecrire entre 1 et 31, sauf le premier du mois à ecrire 1ER. Les mois sont a écrire en lettre Majuscules sans accent. Enfin l'année a écrire en 4 chiffres Ceci pour compatibilité avec l'ouverture du fichier pdf correspondant à placer dans le répertoire Cantine/Menu</p>
 
     <?php echo form_open_multipart(); ?>
                 <div class="form-group">
@@ -70,6 +71,8 @@
 </body>
 </html>
 
+
+<?php } ?>
 
 <?php 
 

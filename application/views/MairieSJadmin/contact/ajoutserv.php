@@ -1,4 +1,6 @@
-<br>
+<?php if (isset($_SESSION['log'])){?>
+    
+    <br>
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
@@ -17,6 +19,11 @@
                     <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire?>
                     
                     <label for="serv_tel"><b>Téléphone Association:</b></label><input type="text" class="form-control" name="serv_tel" id="serv_tel" value="<?php echo set_value('serv_tel');?>">
+                    <?php echo form_error('serv_tel'); // affiche l'erreur du champs nom obligatoire?>
+
+                    <label for="serv_mail"><b>Mail du service :</b></label><input type="text" class="form-control" name="serv_mail" id="serv_mail" value="<?php echo set_value('serv_mail');?>">
+                    <?php echo form_error('serv_mail'); // affiche l'erreur du champs nom obligatoire?>
+                    
                     
                 </div>
 
@@ -51,3 +58,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php } ?>

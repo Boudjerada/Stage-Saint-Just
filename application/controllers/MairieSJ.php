@@ -9,7 +9,7 @@ class MairieSJ extends CI_Controller {
 
         $head['title']= "Bienvenue";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/accueil');
     }
 
@@ -18,7 +18,7 @@ class MairieSJ extends CI_Controller {
 
         $head['title']= "Accueil";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/liens');
     }
 
@@ -28,7 +28,7 @@ class MairieSJ extends CI_Controller {
 
         $head['title']= "Contacts utiles";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/contact');
     }
 
@@ -147,7 +147,7 @@ public function association(){
 
     $head['title']="Association";
 
-    $this->load->view('header',$head);
+    $this->load->view('header2', $head);
     $this->load->view('MairieSJ/association/association');
 
 }
@@ -183,7 +183,7 @@ public function reservationsalle(){
 
         if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
-                $this->load->view('header',$head);
+                $this->load->view('header2', $head);
                 $this->load->view('MairieSJ/association/reservationsalle');
 
             }
@@ -241,7 +241,7 @@ body
 
 $aHeaders = array('MIME-Version' => '1.0',
 'Content-Type' => 'text/html; charset=utf-8',
-'From' => 'com@mairiesaintjustenchaussee.fr' ,
+'From' => 'com@mairie-saintjustenchaussee.fr' ,
 'X-Mailer' => 'PHP/' . phpversion()
 );
 
@@ -255,7 +255,7 @@ $_SESSION["resok"] ="ok";
            }
     } 
     else{
-        $this->load->view('header',$head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/association/reservationsalle');
     }
 
@@ -267,7 +267,7 @@ $_SESSION["resok"] ="ok";
 
         $head['title']="Agenda";
 
-        $this->load->view('header',$head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/accueilAgenda');
 
     }
@@ -283,8 +283,8 @@ $_SESSION["resok"] ="ok";
         $data = $this->MairieSJ_model->evenement();
         $aView["evenement"] = $data;
     
-        $this->load->view('header', $head);
-        $this->load->view('MairieSJ/evenement/liste',$aView);
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/evenement/listeeve',$aView);
 
     }
 
@@ -295,7 +295,7 @@ $_SESSION["resok"] ="ok";
 
         $head['title'] = "Cantine";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/cantine/cantine');
 
     }
@@ -311,7 +311,7 @@ $_SESSION["resok"] ="ok";
         $data = $this->MairieSJ_model->planning();
         $aView["planning"] = $data;
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/cantine/planning', $aView);
 
     }
@@ -328,7 +328,7 @@ $_SESSION["resok"] ="ok";
         $data = $this->MairieSJ_model->reservation();
         $aView["reservation"] = $data;
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/cantine/reservation', $aView);
 
         }
@@ -344,7 +344,7 @@ $_SESSION["resok"] ="ok";
         $data = $this->MairieSJ_model->menu();
         $aView["menu"] = $data;
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/cantine/menu', $aView);
 
     }
@@ -355,7 +355,7 @@ $_SESSION["resok"] ="ok";
 
         $head['title'] = "Police municipal";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/police');
 
     }
@@ -364,10 +364,136 @@ $_SESSION["resok"] ="ok";
 
         $head['title'] = "Environnement";
 
-        $this->load->view('header', $head);
+        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/environnement');
 
     }
+
+
+//Document administratif
+//Accueil
+    public function docAdmin(){
+
+        $head['title'] = "Documents Administratifs";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/Document/accueil');
+
+    }
+
+//Carte identité et passeport
+    public function CIetP(){
+
+        $head['title'] = "Carte d'identité et Passeport";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/Document/CIetP');
+
+
+    }
+
+//Certificat d'immatriculation
+    public function CIV(){
+
+        $this->load->view('MairieSJ/Document/CIV');
+        
+    }
+
+
+//Livret de famille
+    public function LF(){
+
+        $this->load->view('MairieSJ/Document/LF');
+    
+    }
+
+//Recensement militaire
+    public function RM(){
+
+        $this->load->view('MairieSJ/Document/RM');
+
+    }
+
+
+//Cinéma Jeanne Moreau
+
+    public function cinema(){
+
+        $head['title'] = "Cinéma Jeanne Moreau";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/association/cinema');
+
+    }
+
+
+//CCAS
+
+    public function ccas(){
+
+        $head['title'] = "CCAS";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/ccas');
+
+     }
+
+
+//jeunesse
+
+//accueil
+    public function jeunesse(){
+
+        $head['title'] = "Jeunesse";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/jeunesse/accueil');
+
+    }
+
+//Périscolaire et loisir
+
+    public function periscolaireloisir(){
+
+        $head['title'] = "Périscolaire et loisirs";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/jeunesse/periscolaireloisir');
+
+    }
+
+
+//Périscolaire
+
+    public function periscolaire(){
+
+        $this->load->view('MairieSJ/jeunesse/periscolaire');
+
+
+    }
+
+
+//Loisirs
+
+    public function loisirs(){
+
+        $this->load->view('MairieSJ/jeunesse/loisirs');
+
+}
+
+//Contact Périscolaire et centre de loisirs
+
+    public function contactPetCL(){
+
+        $this->load->view('MairieSJ/jeunesse/contact');
+
+    }
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,6 @@
-<br>  
+<?php if (isset($_SESSION['log'])){?>
+    
+    <br>  
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
@@ -64,7 +66,7 @@
 </body>
 </html>
 
-
+<?php } ?>
 
 <?php 
 

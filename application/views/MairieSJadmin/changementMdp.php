@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION['log'])){?>  
 
 <?php
     if (isset ($_SESSION["mdpmodif"])){
@@ -43,10 +44,11 @@
             </div>
             <div class="d-flex justify-content-center" name = "actioninscription">
                 <button class="btn btn-dark" type="submit"  onclick="verif();">Modifier</button>
+                <a  class="btn btn-primary ml-3" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a>
             </div>
         </form>
         
-    <h4><a  class="btn-primary" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h4>
+    
 
     <br>
 
@@ -95,3 +97,6 @@ unset($_SESSION["mdpmodif"]);
 
 
 ?>
+
+
+<?php } ?>

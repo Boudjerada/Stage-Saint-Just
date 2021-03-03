@@ -1,3 +1,5 @@
+<?php if (isset($_SESSION['log'])){?>
+    
 <br>  
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
@@ -14,9 +16,9 @@
         <thead>
             <tr class="table-active">
                 
-                <th><h3>Saint Justois</h3></th>
-                <th><h3>Extérieur</h3></th>
-                <th><h3>Supprimer</h3></th>
+                <th><h3 class="d-flex justify-content-center">Saint Justois</h3></th>
+                <th><h3 class="d-flex justify-content-center">Extérieur</h3></th>
+                <th><h3 class="d-flex justify-content-center">Supprimer</h3></th>
                 
             </tr>
         <thead>
@@ -28,9 +30,9 @@
                 ?>
                
             <tr>
-                <th><a href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><?=$stjust;?></th>
-                <th><a href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><?=$ext;?></th>
-                <th><a class="btn-success" href="<?= base_url('index.php/AdminStJust/suppRes/'.$row->res_id);?>">Supprimer</a></th>
+                <th><a class="d-flex justify-content-center" href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><?=$stjust;?></th>
+                <th><a class="d-flex justify-content-center"  href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><?=$ext;?></th>
+                <th><a class="btn btn-success d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppRes/'.$row->res_id);?>">Supprimer</a></th>
             </tr>
         
         <?php } ?>
@@ -48,8 +50,8 @@
 
 <div class="row"> 
     <div class="col-12  d-flex justify-content-center">
-        <a class="btn btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutRes');?>">Ajout Réservation</a>
-        <a class="ml-3 btn btn-success" href="<?= base_url('index.php/AdminStJust/accueil');?>">Retour</a>
+        <h1><a class="btn-dark" href="<?= base_url('index.php/AdminStJust/ajoutRes');?>">Ajout Réservation</a></h1>
+        <h1><a class="ml-5 btn-success" href="<?= base_url('index.php/AdminStJust/accueil');?>">Retour</a></h1>
     </div>
 </div>
 
@@ -65,7 +67,7 @@
 </body>
 </html>
 
-
+<?php } ?>
 
 <?php 
 

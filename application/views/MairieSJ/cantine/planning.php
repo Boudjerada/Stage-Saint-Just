@@ -1,7 +1,9 @@
-
+<div id="cantine">
+<br>
 <h1 class="d-flex justify-content-center"><FONT COLOR="blue"> Planning de réservation</FONT></h1>
 
     <br>
+
 
     <div class="table-responsive"> <!--tableau responsive-->
         
@@ -9,9 +11,9 @@
 
             <thead>
                 <tr class="table-active">
-                    <th><h3>Année</h3></th>
-                    <th><h3>Mois</h3></th>
-                    <th><h3>Je réserve mes repas ou modifie jusqu'au</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Année</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Mois</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Je réserve mes repas ou modifie jusqu'au</h3></th>
                 </tr>
             <thead>
             <tbody>
@@ -19,9 +21,9 @@
             <?php foreach ($planning as $row){?>
                 
                 <tr>
-                    <th><h3><?= $row->pla_annee ?></h3></th>
-                    <th><h3><?= $row->pla_mois ?></h3></th>
-                    <th><h3><?= $row->pla_date ?></h3></th>
+                    <th><h3 class="d-flex justify-content-center"><?= $row->pla_annee ?></h3></th>
+                    <th><h3 class="d-flex justify-content-center"><?= $row->pla_mois ?></h3></th>
+                    <th><h3 class="d-flex justify-content-center"><?= $row->pla_date ?></h3></th>
                 </tr>
 
             <?php } ?>
@@ -36,9 +38,11 @@
     
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
-            <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h2>
+            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
         </div>
     </div>
+
+</div>
 
 
  

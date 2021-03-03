@@ -4,6 +4,9 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class MairieSJ_model extends CI_Model
 {
 
+//Requete de sélection commune aux 2 interfaces
+
+
 //Enregistrement Administrateur
 
 //Test existance du login qui est unique en base
@@ -163,6 +166,17 @@ public function serv($id){
 
         return (!empty($nbres));
     }
+
+
+//Requete de Modification, suppression, ajout pour l'espace administratif
+
+//Ajout Enregistrement
+
+public function insEnr($data, $nomBase){
+    $this->db->insert($nomBase, $data);
+}
+
+
 
 
 

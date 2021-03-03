@@ -1,4 +1,6 @@
-<br>
+<?php if (isset($_SESSION['log'])){?>
+    
+    <br>
     
     
     <div class="row">
@@ -17,7 +19,11 @@
                     <label for="serv_nom"><b>Nom Service :</b></label><input type="text" class="form-control" name="serv_nom" id="serv_nom" value="<?php echo set_value('serv_nom', $service->serv_nom);?>">
                     <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire?>
                     
-                    <label for="serv_tel"><b>Téléphone Association:</b></label><input type="text" class="form-control" name="serv_tel" id="serv_tel" value="<?php echo set_value('serv_tel', $service->serv_tel);?>">
+                    <label for="serv_tel"><b>Téléphone du service :</b></label><input type="text" class="form-control" name="serv_tel" id="serv_tel" value="<?php echo set_value('serv_tel', $service->serv_tel);?>">
+                    <?php echo form_error('serv_tel'); // affiche l'erreur du champs nom obligatoire?>
+
+                    <label for="serv_mail"><b>Mail du service :</b></label><input type="text" class="form-control" name="serv_mail" id="serv_mail" value="<?php echo set_value('serv_mail', $service->serv_mail);?>">
+                    <?php echo form_error('serv_mail'); // affiche l'erreur du champs nom obligatoire?>
                     
                 </div>  
                 <div class="d-flex justify-content-center" name ="actionProduit">
@@ -51,3 +57,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<?php } ?>

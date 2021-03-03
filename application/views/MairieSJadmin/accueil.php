@@ -1,4 +1,6 @@
+<?php if (isset($_SESSION['log'])){?>
 
+<div id="image">
         <br>
                     <div id="RGPD">
                     Les informations recueillies sont enregistrées dans un fichier informatisé par le responsable informatique de la mairie de Saint Just   
@@ -13,8 +15,10 @@
                     En cas de manquement à ces obligations, les citoyens pourront se tourner vers l'autorité référente (Commission nationale de l'informatique et des libertés ou Cnil en France). Les sanctions encourues sont assez lourdes puisqu'elles peuvent aller jusqu'à 20 millions d'euros.<br>
                     
                     </div>
-                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="voirsuite();" id="voirsuite">Voir la suite...</a></h4>
-                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="replier();" style="display:none;" id="replier">Replier...</a></h4>
+                    
+                    <br>
+                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="replier();" id="replier">Replier...</a></h4>
+                    <h4 class="col-12  d-flex justify-content-center"><a href="#" onclick="voirsuite();"  style="display:none;" id="voirsuite">Voir la suite...</a></h4>
         
 
 <br>
@@ -49,13 +53,16 @@
             <h6>Agenda :
             <br> 
                 <a class='ml-2' href="<?= base_url("index.php/AdminStJust/evenement");?>">Manifestation</a>
-                <a class='ml-2' href="">Permanence des élus</a>
-                <a class='ml-2' href="">Permanence diverses</a>
+                <a class='ml-2' href=#>Permanence des élus</a>
+                <a class='ml-2' href=#>Permanence diverses</a>
             </h6>
         </div>
     </div>
 
     <br>
+
+<?php 
+    if ( ($_SESSION['status'] == 0) || ($_SESSION['status'] == 1) ){?>
 
     <div class="row"> 
         <div class="col-12">
@@ -68,6 +75,11 @@
         </div>
     </div>
 
+    <?php } ?>
+
+
+</div>
+
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->
@@ -78,3 +90,5 @@
 <script src="<?php echo base_url("assets/js/SJ/AdminSJ.js");?>"></script>
 </body>
 </html>
+
+<?php } ?>

@@ -1,35 +1,48 @@
-
-
-<style>
-#agenda{
-    background-color: rgb(170, 180, 23);
-    }
-</style>
-
 <div id="agenda"> 
     <br>  
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"   alt="Image responsive" title="Image mairie"> 
         </div>
     </div>
     
     <br>
+    <div class="row"> 
+        
+        <div class="col-12 d-flex justify-content-around">
+        
+           
+            <img src="<?php echo base_url("assets/images/MairieSJ/manif1.jpg");?>" class="w-25" alt="Image responsive" title="Image Manifestation">
+            
+       
+            
+            <img src="<?php echo base_url("assets/images/MairieSJ/manif2.jpg");?>" class="w-25" alt="Image responsive" title="Image Manifestation">
+           
+        </div>
+
+    </div>
+
+    <br>
     <br>
 
-
-    <h3>
-        <div class="d-flex justify-content-around">
-            <a class="btn-secondary"   href="<?= base_url("index.php/MairieSJ/evenement");?>">Manifestations</a>
-            <a class="btn-secondary"   href="">Permanence des élus</a>
-            <a class="btn-secondary"   href="">Permanence diverses</a>
+  
+        <div class="row">
+            <div class="col-12 col-sm-4">
+                <h1 class="d-flex justify-content-center"><a class="btn-secondary"   href="<?= base_url("index.php/MairieSJ/evenement");?>">Manifestations</a></h1>
+            </div>
+            <div class="col-12 col-sm-4">
+                <h1 class="d-flex justify-content-center"><a class="btn-secondary"   href="">Permanence des élus</a></h1>
+            </div>
+            <div class="col-12 col-sm-4">
+                <h1 class="d-flex justify-content-center"><a class="btn-secondary"   href="">Permanence diverses</a></h1>
+            </div>
         </div>
-    </h3>
+    
 
     <br>
     
     <h1 class="d-flex justify-content-center">
-        <a class="btn-success ml-2"   href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a>
+        <a class="btn-success"   href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a>
     </h1>
 
     <br>

@@ -1,3 +1,5 @@
+<div id="cantine">
+
 <br>  
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
@@ -14,21 +16,21 @@
         <thead>
             <tr class="table-active">
                 
-                <th><h3>Saint Justois</h3></th>
-                <th><h3>Extérieur</h3></th>
+                <th><h2 class="d-flex justify-content-center"><FONT color="black">Saint Justois</FONT></h2></th>
+                <th><h2 class="d-flex justify-content-center"><FONT color="black">Extérieur</FONT></h2></th>
                 
             </tr>
         <thead>
         <tbody>
 
             <?php foreach ($reservation as $row){
-                $stjust= $row->res_mois. " st just";
-                $ext=$row->res_mois." EXT";
+                $stjust= $row->res_mois. "_st_just";
+                $ext=$row->res_mois."_EXT";
                 ?>
                
             <tr>
-                <th><a href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><?=$stjust;?></th>
-                <th><a href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><?=$ext;?></th>
+                <th><h3><a class="d-flex justify-content-center text-dark" href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><FONT color="blue"><?=$stjust;?></FONT></a></h3></th>
+                <th><h3><a class="d-flex justify-content-center text-dark" href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><FONT color="blue"><?=$ext;?></FONT></a></h3></th>
             </tr>
         
         <?php } ?>
@@ -39,8 +41,10 @@
 
 <div class="row"> 
     <div class="col-12  d-flex justify-content-center">
-        <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h2>
+        <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
     </div>
+</div>
+
 </div>
 
 </div>

@@ -1,7 +1,8 @@
-<br>  
+<div id="cantine">
+
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img class="mt-5" src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  alt="Image responsive" title="Image mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
@@ -17,7 +18,7 @@
             $fich="MENUS DU ".$row->debut." ".$row->moisd." AU ".$row->fin." ".$row->moisf;
         ?>
         
-            <a class="btn d-flex justify-content-center" href="<?php echo base_url("Cantine/Menu/$fich.pdf");?>"  target="_blank"><FONT COLOR="blue"><?= "Menu du ".$row->debut." ".$row->moisd." au ".$row->fin." ".$row->moisf." ".$row->annee?></FONT></a>
+            <a class="btn btn-success d-flex justify-content-center" href="<?php echo base_url("Cantine/Menu/$fich.pdf");?>"  target="_blank"><FONT COLOR="black"><b><?= "Menu du ".$row->debut." ".$row->moisd." au ".$row->fin." ".$row->moisf." ".$row->annee?></b></FONT></a>
             
             <br>
         
@@ -28,11 +29,12 @@
 
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
-            <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h2>
+            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
         </div>
     </div>
 
 
+</div>
 
 </div>
 

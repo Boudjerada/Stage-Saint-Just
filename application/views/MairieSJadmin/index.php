@@ -62,10 +62,12 @@
 $_SESSION["messlog2"]="";
 $_SESSION["messlog3"]="";
 $_SESSION['log']="";
+$_SESSION['status']="";
 
 unset($_SESSION["messlog2"]);
 unset($_SESSION["messlog3"]);
 unset($_SESSION['log']);
+unset($_SESSION['status']);
 
 session_destroy();
 

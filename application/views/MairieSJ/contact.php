@@ -6,59 +6,60 @@
     <br>
     <br>
 
-    <h1 class="d-flex justify-content-center"><font COLOR="black">Contact</h1></font>
+    <h1 class="d-flex justify-content-center"><font COLOR="black">Liste de Contacts utiles</h1></font>
 
-    <br>
+<br>
 
-    <div class="row"> 
-        <div class="col-12">
-            <div  class="table-responsive"> <!--tableau responsive-->
-                <table class="table table-hover">
-                    <tbody>
-                        <tr>
-                            <th><button id="button1" class="btn btn-primary">SERVICE MAIRIE</button></th>
-                            <th><button id="button3" class="btn btn-primary">DECHETTERIE</button></th>
-                            <th><button id="button4" class="btn btn-primary">GENDARMERIE</button></th>
-                            <th><button id="button5" class="btn btn-primary">POMPIERS</button></th>
-                        </tr>
-                        <tr >
-                            <th><button id="button6" class="btn btn-primary">MEDECINS GENERALISTES</button></th>
-                            <th> <button id="button7" class="btn btn-primary">PHARMACIES</button></th>
-                            <th><button id="button8" class="btn btn-primary">INFIRMIER(E)S</button></th>
-                            <th><button id="button9" class="btn btn-primary">SAGES-FEMMES</button></th>
-                        </tr>
-                        <tr >
-                            <th><button id="button10" class="btn btn-primary">LABORATOIRE</button></th>
-                            <th><button id="button11" class="btn btn-primary">DENTISTES</button></th>
-                            <th><button id="button12" class="btn btn-primary">DIETETICIENNE</button></th>
-                            <th> <button id="button13" class="btn btn-primary">AMBULANCES</button></th>
-                        </tr>
-                        <tr>
-                            <th><button id="button14" class="btn btn-primary">MASSEURS KINE</button></th>
-                            <th><button id="button15" class="btn btn-primary">CONSEILLERE CONJUGALE ET FAMILIALE</button></th>
-                            <th> <button id="button16" class="btn btn-primary">PSYCHOLOGUE</button></th>
-                            <th><button id="button17" class="btn btn-primary">OSTEOPATHE</button></th>
-                        </tr>
-                        <tr>
-                            <th><button id="button18" class="btn btn-primary">PEDICURES PODOLOGUES</button></th>
-                            <th><button id="button19" class="btn btn-primary">CLINIQUE VETERINAIRE</button></th>
-                            <th></th>
-                            <th></th>
-
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div id="div1"></div>
+<div class="row"> 
+    <div class="col-12">
+        <div class="form-group">
+            <h3 class="d-flex justify-content-center"><label for="pla_id"><b><FONT color="blue">Choisir le service concerné :</FONT></b></label></h3>
         </div>
     </div>
+</div>
+
+
+<div class="row ml-2 mr-2"> 
+    <div class="col-12  bg-success ">
 
     <br>
+
+        <select class="form-control  bg-success text-dark" id="select1" >
+            <option class="text-dark" value="contact1">SERVICE MAIRIE</option>
+            <option class="text-dark" value="contact3">DECHETTERIE</option>
+            <option class="text-dark" value="contact4">GENDARMERIE</option>
+            <option class="text-dark" value="contact5">POMPIERS</option>
+            <option class="text-dark" value="contact6">MEDECINS GENERALISTES</option>
+            <option class="text-dark "value="contact7">PHARMACIES</option>
+            <option class="text-dark" value="contact8">INFIRMIER(E)S</option>
+            <option class="text-dark" value="contact9">SAGES-FEMMES</option>
+            <option class="text-dark" value="contact10">LABORATOIRE</option>n>
+            <option class="text-dark" value="contact11">DENTISTES</option>
+            <option class="text-dark" value="contact12">DIETETICIENNE</option>
+            <option class="text-dark" value="contact13">AMBULANCES</option>
+            <option class="text-dark" value="contact14">MASSEURS KINE</option>
+            <option class="text-dark" value="contact15">CONSEILLERE CONJUGALE ET FAMILIALE</option>
+            <option class="text-dark" value="contact16">PSYCHOLOGUE</option>
+            <option class="text-dark" value="contact17">OSTEOPATHE</option>
+            <option class="text-dark" value="contact18">PEDICURES PODOLOGUES</option>
+            <option class="text-dark" value="contact19">CLINIQUE VETERINAIRE</option>
+        </select>
+
+    <br>
+
+    </div>
+</div>
+
+
+<br>
+
+<div id="div1"></div>
+    
+<br>
     
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
-            <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h2>
+            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h1>
         </div>
     </div>
 

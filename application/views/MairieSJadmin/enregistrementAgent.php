@@ -1,3 +1,5 @@
+<?php if (isset($_SESSION['log'])){?> 
+
 
 <?php
     if (isset ($_SESSION["insok"])){
@@ -42,20 +44,20 @@
                         <option value = 3 <?php if (isset($_SESSION["status"]) and $_SESSION["status"] == 3) echo "selected"; ?>>Périscolaire</option>
                         <option value = 4 <?php if (isset($_SESSION["status"]) and $_SESSION["status"] == 4) echo "selected"; ?>>Logement</option>
                     </select> 
-                <?php echo form_error('us_status'); // affiche l'erreur du champs concerné?>
+                
                 <br>
                 <label for="us_mail"><b>E-mail</b></label><input type="text" class="form-control" name="us_mail" id="us_mail" value="<?=set_value('us_mail'); ?>" placeholder="Veuillez saisir le mail de l'agent" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <?php echo form_error('us_mail'); // affiche l'erreur du champs concerné?>
-                <br>
+              
                 <?php if  (isset ($_SESSION["messMail"])){?> <span id="alerte-mail" class="alert alert-danger"><?=$_SESSION['messMail'];?></span><?php }?>
                 <br>
-                <br>
+               
                 <label for="us_log"><b>Login</b></label><input type="text" class="form-control" name="us_log" id="us_log" value="<?=set_value('us_log'); ?>" placeholder="Choisir un login de connexion de 6 caractères minimum" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <?php echo form_error('us_log'); // affiche l'erreur du champs concerné?>
-                <br>
+                
                 <?php if  (isset ($_SESSION["messLogin"])){?> <span id="alerte-mail" class="alert alert-danger"><?=$_SESSION['messLogin'];?></span><?php }?>
                 <br>
-                <br>
+                
                 <label for="us_mp"><b>Mot de passe</b></label><input type="password" class="form-control" name="us_mp" id="us_mp" value="<?=set_value('us_mp');?>" placeholder="Choisir un mot de passe de connexion de 8 caractères" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <?php echo form_error('us_mp'); // affiche l'erreur du champs concerné?>
                 <br>
@@ -104,14 +106,17 @@ function verif(){
 $_SESSION["messMail"]="";
 $_SESSION["messLogin"]="";
 $_SESSION["messmdp"]="";
-$_SESSION["status"]="";
+$_SESSION["stat"]="";
 $_SESSION["insok"]="";
 
 unset($_SESSION["messMail"]);
 unset($_SESSION["messLogin"]);
 unset($_SESSION["messmdp"]);
-unset($_SESSION["status"]);
+unset($_SESSION["stat"]);
 unset($_SESSION["insok"]);
 
 
 ?>
+
+
+<?php } ?>

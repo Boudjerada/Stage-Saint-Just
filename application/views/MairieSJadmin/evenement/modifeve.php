@@ -1,4 +1,6 @@
-<br>
+<?php if (isset($_SESSION['log'])){?> 
+    
+    <br>
     
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
@@ -24,7 +26,11 @@
                     <label for="eve_Orga"><b>Organisateur Manifestation :</b></label><input type="text" class="form-control" name="eve_Orga" id="eve_Orga" value="<?php echo set_value('eve_Orga', $evenement->eve_Orga);?>">
                     <?php echo form_error('eve_Orga'); // affiche l'erreur du champs nom obligatoire?>
                     
-                    <label for="eve_contact"><b>Contact de l'organisateur :</b></label><input type="text" class="form-control" name="eve_contact" id="eve_contact" value="<?php echo set_value('eve_contact', $evenement->eve_contact);?>">
+                    <label for="eve_contact"><b>Mail de l'organisateur :</b></label><input type="text" class="form-control" name="eve_contact" id="eve_contact" value="<?php echo set_value('eve_contact', $evenement->eve_contact);?>">
+                    <?php echo form_error('eve_contact'); // affiche l'erreur du champs nom obligatoire?>
+
+                    <label for="eve_tel"><b>Téléphone de l'organisateur :</b></label><input type="text" class="form-control" name="eve_tel" id="eve_tel" value="<?php echo set_value('eve_tel', $evenement->eve_tel);?>">
+                    <?php echo form_error('eve_tel'); // affiche l'erreur du champs nom obligatoire?>
                     
                 
                 </div>  
@@ -59,3 +65,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+<?php } ?>

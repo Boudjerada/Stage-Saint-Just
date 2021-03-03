@@ -1,23 +1,26 @@
+<?php if (isset($_SESSION['log'])){?> 
 
     <div class="table-responsive"> <!--tableau responsive-->
         <table class="table table-hover table-bordered">
 
             <thead>
                 <tr class="table-active">
-                    <th><h3>Fonction</h3></th>
-                    <th><h3>Contact</h3></th>
-                    <th><h3>Modification</h3></th>
-                    <th><h3>Suppression</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Fonction</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Téléphone</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Mail</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Modification</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Suppression</h3></th>
                 </tr>
             <thead>
             <tbody>
 
         <?php foreach ($serviceMairie as $row){
                 echo "<tr>";
-                    echo "<th>".$row->serv_nom."</th>";
-                    echo "<th>".$row->serv_tel."</th>";?>
-                    <th><a  href="<?= base_url('index.php/AdminStJust/modifserv/'.$row->serv_id);?>">Modifier</a></th>
-                    <th><a  href="<?= base_url('index.php/AdminStJust/suppserv/'.$row->serv_id);?>">Supprimer</a></th>
+                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_nom."</p>"."</th>";
+                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_tel."</p>"."</th>";
+                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_mail."</p>"."</th>";?>
+                    <th><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/modifserv/'.$row->serv_id);?>">Modifier</a></th>
+                    <th><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppserv/'.$row->serv_id);?>">Supprimer</a></th>
                   </tr>
       <?php  }
         ?>
@@ -47,3 +50,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
 </html>
+
+<?php } ?>
