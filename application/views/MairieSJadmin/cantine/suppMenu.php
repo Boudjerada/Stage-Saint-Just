@@ -1,21 +1,38 @@
 <?php if (isset($_SESSION['log'])){?>
     
-<br>
-    
+    <div id="image">
+    <br>
+
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12">
+            <h2 class="d-flex justify-content-center"><Font color="blue">Suppression Menu</Font></h2>
+          
+            
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
     
-    <br>
-    <br>
+ <br>
+ <br>
+
     
       <?php $enr="MENUS DU ".$menu->debut." ".$menu->moisd." AU ".$menu->fin." ".$menu->moisf;?>
-            <h1 class="d-flex justify-content-center"><b><?=$enr?></b></h1>
+            <h1 class="d-flex justify-content-center mr-2 ml-2"><b><?=$enr?></b></h1>
             <br>
             <div class="d-flex justify-content-center">
-                <h4>Etes vous sûr de vouloir supprimer la semaine &nbsp<b><?=$enr?></b>&nbspde la base de données ?<h4>
+                <h4 class="mr-2 ml-2">Etes vous sûr de vouloir supprimer la semaine&nbsp<b><?=$enr?></b>&nbspde la base de données ?<h4>
             </div>
 
             <br>
@@ -50,6 +67,7 @@ function verif(){
 }
 </script>
 
+</div>
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

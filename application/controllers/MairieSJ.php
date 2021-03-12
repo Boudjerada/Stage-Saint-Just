@@ -6,14 +6,11 @@ class MairieSJ extends CI_Controller {
 
 //Page d'accueil
     public function index(){
-
-        $head['title']= "Bienvenue";
-
-        $this->load->view('header2', $head);
         $this->load->view('MairieSJ/accueil');
+    
     }
 
-//Page de liens 
+//Page de liens accessible via page d'accueil
     public function liens(){
 
         $head['title']= "Accueil";
@@ -21,9 +18,10 @@ class MairieSJ extends CI_Controller {
         $this->load->view('header2', $head);
         $this->load->view('MairieSJ/liens');
     }
+//-------------------------------------------------------------------------------------------------------------------------------------------
 
-//Page contact
-//Page de base
+//Lien contact
+//Page de base , sélection du contact dont on veut les coordonnées
     public function contact(){
 
         $head['title']= "Contacts utiles";
@@ -32,7 +30,9 @@ class MairieSJ extends CI_Controller {
         $this->load->view('MairieSJ/contact');
     }
 
-//chargement via js ajax de la liste des contact service mairie
+//chargement via js ajax du contact ou de la liste contact sur la vue contact, chargement dynamique
+
+//Chargement liste contact interne de la mairie 
     public function contact1(){
     
         $this->load->model('MairieSJ_model');
@@ -43,106 +43,96 @@ class MairieSJ extends CI_Controller {
         $this->load->view('MairieSJ/contact/contact1',$aView);
     }
 
-//chargement via js ajax de la liste des associations
-    public function contact2(){
-    
-        $this->load->model('MairieSJ_model');
-        $data = $this->MairieSJ_model->association();
-        $aView["association"] = $data;
-
-        
-        $this->load->view('MairieSJ/contact/contact2',$aView);
-    }
-
-
-//Décheterrie
+//Chargement contact Décheterrie
     public function contact3(){
 
         $this->load->view('MairieSJ/contact/contact3');
     }
 
-//Gendarmerie
+//Chargement contact Gendarmerie
     public function contact4(){
         $this->load->view('MairieSJ/contact/contact4');
     }
 
-//Pompier
+//Chargement contact Pompier
     public function contact5(){
         $this->load->view('MairieSJ/contact/contact5');
     }
 
-//Medecins Generalistes
+//Chargement contact Medecins Generalistes
     public function contact6(){
         $this->load->view('MairieSJ/contact/contact6');
     }
 
-//Pompier
+//Chargement contact Pompier
     public function contact7(){
         $this->load->view('MairieSJ/contact/contact7');
     }
 
-//Infirmier
+//Chargement contact Infirmier
     public function contact8(){
         $this->load->view('MairieSJ/contact/contact8');
     }
 
-//Sages femmes
+//Chargement contact Sages femmes
     public function contact9(){
         $this->load->view('MairieSJ/contact/contact9');
     }
 
-//Laboratoires
+//Chargement contact Laboratoires
     public function contact10(){
         $this->load->view('MairieSJ/contact/contact10');
     }
 
-//Dentiste
+//Chargement contact Dentiste
     public function contact11(){
         $this->load->view('MairieSJ/contact/contact11');
     }
 
-//Diététicien
+//Chargement contact Diététicien
     public function contact12(){
         $this->load->view('MairieSJ/contact/contact12');
 }
-//Ambulance
+//Chargement contact Ambulance
     public function contact13(){
         $this->load->view('MairieSJ/contact/contact13');
 }
 
-//Kiné
+//Chargement contact Kiné
     public function contact14(){
         $this->load->view('MairieSJ/contact/contact14');
     }
 
-//Conseillère social
+//Chargement contact Conseillère social
     public function contact15(){
         $this->load->view('MairieSJ/contact/contact15');
     }
 
-//Phychologue
+//Chargement contact Phychologue
     public function contact16(){
         $this->load->view('MairieSJ/contact/contact16');
     }
 
-//Ostéophate
+//Chargement contact Ostéophate
 public function contact17(){
     $this->load->view('MairieSJ/contact/contact17');
 }
 
-//Pédicure/Podologue
+//Chargement contact Pédicure/Podologue
     public function contact18(){
         $this->load->view('MairieSJ/contact/contact18');
     }
 
-//Vétérinaire
+//Chargement contact Vétérinaire
     public function contact19(){
         $this->load->view('MairieSJ/contact/contact19');
     }
 
+//---------------------------------------------------------------------------------------------------------------------------------------
 
-//ASSOCIATION
+//Lien ASSOCIATION
 
+//Accueil
 public function association(){
 
     $head['title']="Association";
@@ -152,6 +142,20 @@ public function association(){
 
 }
 
+
+//Chargement de la liste des associations js ajax
+public function contact2(){
+    
+    $this->load->model('MairieSJ_model');
+    $data = $this->MairieSJ_model->association();
+    $aView["association"] = $data;
+
+    
+    $this->load->view('MairieSJ/contact/contact2',$aView);
+}
+
+
+//Formulaire réservation de salle
 public function reservationsalle(){
 
     $head['title']="Réservation salle";
@@ -195,6 +199,8 @@ public function reservationsalle(){
 $nom = $this->input->post('nom');
 $prenom = $this->input->post('prenom');
 $tel = $this->input->post('tel');
+$mail = $this->input->post('mail');
+
 $salle = $this->input->post('salle');
 
 $message = "<!DOCTYPE html>
@@ -229,7 +235,7 @@ body
     <br>  
     <div class='row'>
         <div class='col-12 d-flex justify-content-center'>
-          <p>Bonjour, Je m'appelle $nom $prenom.<br>Je voudrais éventuellement réserver la salle $salle.<br>Pouvez vous me contacter par mail ou par téléphone au $tel afin que nous puissions en discuter.<br>Merci, cordialement...</p>
+          <p>Bonjour, Je m'appelle $nom $prenom.<br>Je voudrais des informations pour éventuellement réserver la salle $salle.<br>Pouvez vous me contacter par mail $mail ou par téléphone au $tel afin que nous puissions en discuter.<br>Merci, cordialement...</p>
       </div>    
     </div>   
 </div> 
@@ -239,6 +245,7 @@ body
 </body>
 </html>";
 
+/*
 $aHeaders = array('MIME-Version' => '1.0',
 'Content-Type' => 'text/html; charset=utf-8',
 'From' => 'com@mairie-saintjustenchaussee.fr' ,
@@ -247,6 +254,14 @@ $aHeaders = array('MIME-Version' => '1.0',
 
 mail($mail, "Demande de réservation d'une salle", $message, $aHeaders);
 $_SESSION["resok"] ="ok";
+ */ 
+
+$this->email->from('noreply@saintjustenchaussee.fr', $nom." ".$prenom);
+$this->email->to('com@mairie-saintjustenchaussee.fr'); 
+$this->email->subject('Demande de salle');
+$this->email->message($message);
+$this->email->send();  
+$_SESSION["resok"] ="ok";         
             
             
 
@@ -261,7 +276,11 @@ $_SESSION["resok"] ="ok";
 
 }
 
-//Agenda
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Lien Agenda
+
 //Accueil
     public function accueilAgenda(){
 
@@ -273,7 +292,6 @@ $_SESSION["resok"] ="ok";
     }
 
 //Liste Evenement
-
     public function evenement(){
 
         $head['title'] = "Liste Evenement";
@@ -288,9 +306,15 @@ $_SESSION["resok"] ="ok";
 
     }
 
-//Cantine
+//Permanence des élus
 
-//accueil
+//Permanance diverses
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Lien Cantine
+
+//Accueil
     public function cantine(){
 
         $head['title'] = "Cantine";
@@ -300,8 +324,7 @@ $_SESSION["resok"] ="ok";
 
     }
 
-//planing
-
+//planning de réservation
     public function planning(){
 
         $head['title'] = "Planning";
@@ -317,7 +340,7 @@ $_SESSION["resok"] ="ok";
     }
 
 
-//Réservation liste des semaines
+//Réservation liste des mois pour téléchargement du fichier pdf du mois séléctionné
 
     public function reservation(){
 
@@ -334,7 +357,7 @@ $_SESSION["resok"] ="ok";
         }
 
 
-//Liste Menu
+//Liste Menu par semaine avec téléchargement du fichier pdf de la semaine séléctionné
     public function menu(){
 
         $head['title'] = "Menu";
@@ -349,7 +372,10 @@ $_SESSION["resok"] ="ok";
 
     }
 
-//Police Municipal
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//Lien Police Municipal
 
     public function police(){
 
@@ -479,7 +505,7 @@ $_SESSION["resok"] ="ok";
 
         $this->load->view('MairieSJ/jeunesse/loisirs');
 
-}
+    }
 
 //Contact Périscolaire et centre de loisirs
 
@@ -488,6 +514,35 @@ $_SESSION["resok"] ="ok";
         $this->load->view('MairieSJ/jeunesse/contact');
 
     }
+
+
+//Ecole de musique
+
+    public function musique(){
+
+        $head['title'] = "Ecole de musique";
+
+        $this->load->view('header2', $head);
+        $this->load->view('MairieSJ/jeunesse/musique');
+
+    }
+
+//Collège
+
+    public function college(){
+
+        $this->load->view('MairieSJ/jeunesse/college');
+
+    }
+
+//Ecole maternelle et élementaire
+
+    public function ecole(){
+
+        $this->load->view('MairieSJ/jeunesse/ecole');
+
+    }
+
 
 
 

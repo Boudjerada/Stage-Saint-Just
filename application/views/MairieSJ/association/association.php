@@ -32,22 +32,24 @@
 
     <br>
 
-    <div id="btn_assoc">
-
-        <button id="button2" class="btn btn-primary">Liste Association</button>
-        <a href="<?= base_url("index.php/MairieSJ/reservationsalle");?>" class="btn btn-primary">Réservation des salles</a>
-        <a href="<?= base_url("index.php/MairieSJ/cinema");?>" class="btn btn-primary">Cinéma Jeanne Moreau</a>
-
+    <div class="row"> 
+        <div class="co-12 col-sm-4 d-flex justify-content-center mb-2">
+            <button id="button2" class="btn-lg btn-primary">Liste Association</button>
+        </div>
+        <div class="co-12 col-sm-4 d-flex justify-content-center">
+            <a href="<?= base_url("index.php/MairieSJ/cinema");?>" class="btn-lg btn-primary mb-2">Cinéma Jeanne Moreau</a>
+        </div>
+        <div class="co-12 col-sm-4 d-flex justify-content-center">
+            <a href="<?= base_url("index.php/MairieSJ/reservationsalle");?>" class="btn-lg btn-primary mb-2">Réservation des salles</a>
+        </div>
     </div>
-
-    <br>
 
     <div id="div1"></div>
      
 
     <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h1>
+        <div class="col-12  d-flex justify-content-center mb-3">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>"><b>Retour</b></a>
         </div>
     </div>
 

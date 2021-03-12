@@ -1,13 +1,20 @@
 <?php if (isset($_SESSION['log'])){?>
     
+
+<div id="image">
 <br>  
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
-<br>
+
+
+<h4 class="d-flex justify-content-center mt-4 mb-4">Liste fiche pdf de réservation</h4>
 
 <div class="table-responsive"> <!--tableau responsive-->
     
@@ -30,8 +37,8 @@
                 ?>
                
             <tr>
-                <th><a class="d-flex justify-content-center" href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><?=$stjust;?></th>
-                <th><a class="d-flex justify-content-center"  href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><?=$ext;?></th>
+                <th class='table-warning'><a class="d-flex justify-content-center" href="<?php echo base_url("Cantine/FicheReservationCantine/$stjust.pdf");?>" target="_blank"><?=$stjust;?></th>
+                <th class='table-warning'><a class="d-flex justify-content-center"  href="<?php echo base_url("Cantine/FicheReservationCantine/$ext.pdf");?>"  target="_blank"><?=$ext;?></a></th>
                 <th><a class="btn btn-success d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppRes/'.$row->res_id);?>">Supprimer</a></th>
             </tr>
         
@@ -44,7 +51,7 @@
 
 <div class="row"> 
     <div class="col-12">
-        <p><FONT color="red">Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement. Par exemple pour AVRIL, réalisé l'opération 2 fois avec mois de réservation AVRIL, l'un avec fichier saint just, l'autre pour exterieur saint just</FONT></p>
+        <p class="ml-3 mr-3"><FONT color="red">Le mois est à écrire en lettre capital pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement. Par exemple pour AVRIL, réalisé l'opération 2 fois avec mois de réservation AVRIL, l'un avec fichier Saint-Just, l'autre pour exterieur Saint-Just. La suppression se fait sur les deux en une fois.</FONT></p>
     </div>
 </div>
 
@@ -55,6 +62,7 @@
     </div>
 </div>
 
+</div>
 </div>
 
 

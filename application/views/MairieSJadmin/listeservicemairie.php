@@ -1,5 +1,7 @@
 <?php if (isset($_SESSION['log'])){?> 
 
+<div id="image">
+    
     <div class="table-responsive"> <!--tableau responsive-->
         <table class="table table-hover table-bordered">
 
@@ -16,11 +18,11 @@
 
         <?php foreach ($serviceMairie as $row){
                 echo "<tr>";
-                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_nom."</p>"."</th>";
+                    echo "<th  class='table-warning'>"."<p class='d-flex justify-content-center'>".$row->serv_nom."</p>"."</th>";
                     echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_tel."</p>"."</th>";
                     echo "<th>"."<p class='d-flex justify-content-center'>".$row->serv_mail."</p>"."</th>";?>
-                    <th><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/modifserv/'.$row->serv_id);?>">Modifier</a></th>
-                    <th><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppserv/'.$row->serv_id);?>">Supprimer</a></th>
+                        <th  class='table-warning'><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/modifserv/'.$row->serv_id);?>">Modifier</a></th>
+                        <th  class='table-warning'><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppserv/'.$row->serv_id);?>">Supprimer</a></th>
                   </tr>
       <?php  }
         ?>
@@ -29,7 +31,7 @@
         </table>
     </div>
 
-    <br>
+   
 
     <div class="row"> 
         <div class="col-12  d-flex justify-content-center">
@@ -42,6 +44,7 @@
 
     <br>
 
+</div>
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

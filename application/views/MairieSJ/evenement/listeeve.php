@@ -51,17 +51,11 @@
 
 
 
-<br>
-
     <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            
-             <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/accueilAgenda");?>">Retour</a></h2>
-          
+        <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/accueilagenda");?>"><b>Retour</b></a>
         </div>
     </div>
-
-    <br>
 
 </div>
 

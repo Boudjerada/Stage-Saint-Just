@@ -1,16 +1,30 @@
 <?php if (isset($_SESSION['log'])){?>
     
+    <div id="image">
     <br>
-    
+
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12">
+            <h2 class="d-flex justify-content-center"><Font color="blue">Association</Font></h2>
+            <h3 class="d-flex justify-content-center"><Font color="blue">Modification coordonnées</Font></h3>
+            
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
     
-    <br>
-    <br>
-    
+ <br>   
   
     <?php echo form_open(); ?>
                 <div class="form-group">
@@ -32,6 +46,8 @@
 
     </form>
 
+<br>
+
 <script>
 //vérifie si on envoi ou non le formulaire 
     function verif(){ 
@@ -47,7 +63,7 @@
 </script>
 
    
-    
+</div>    
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

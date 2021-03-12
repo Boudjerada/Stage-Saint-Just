@@ -4,12 +4,9 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class MairieSJ_model extends CI_Model
 {
 
-//Requete de sélection commune aux 2 interfaces
-
-
 //Enregistrement Administrateur
 
-//Test existance du login qui est unique en base
+//Test existance du login qui est unique en base, si déjà connu de la base, un message en avertirra l'utilisateur
 
 public function testlog($log){
 
@@ -20,7 +17,7 @@ public function testlog($log){
 
     }
 
-//Test existence du mail qui est unique en base
+//Test existence du mail qui est unique en base, si déjà connu de la base, un message en avertirra l'utilisateur
     public function testmail($mail){
         
   
@@ -31,7 +28,10 @@ public function testlog($log){
     }
 
 
-//Connexion de l'agent pour vérifier s'il existe et pour changement de mot de passe
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------
+//Connexion de l'agent : Récupération de ses informations en bases. Les tests d'autentification sont faites dans la méthode index du contrôleur Administré
     public function connexion($log){
         
         $requete = $this->db->query("SELECT * FROM Administration  WHERE us_log= ?", $log);
@@ -41,13 +41,12 @@ public function testlog($log){
 
 
 
-
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+//Requête de sélection d'informations divers commune aux 2 interfaces pour certaines
 
 //Liste des contacts
-
 //Service contact affichage complet
-
-    public function servicecontact(){
+        public function servicecontact(){
         
         $requete = $this->db->query("SELECT * FROM serviceMairie");
         $result = $requete->result(); 
@@ -55,14 +54,14 @@ public function testlog($log){
     }
 
 //Service mairie affichage d'un service
-public function serv($id){
+    public function serv($id){
     
-    $requete = $this->db->query("SELECT * FROM serviceMairie where serv_id= ?", $id);
-    $serv = $requete->row();
-    return $serv;            
+        $requete = $this->db->query("SELECT * FROM serviceMairie where serv_id= ?", $id);
+        $serv = $requete->row();
+        return $serv;            
 }
 
-//association affichage complet
+//Association affichage complet
     public function association(){
        
         $requete = $this->db->query("SELECT * FROM association");
@@ -70,7 +69,7 @@ public function serv($id){
         return $result;            
     }
 
-//association affichage d'une association
+//Association affichage d'une assoc
     public function ass($id){
         
         $requete = $this->db->query("SELECT * FROM association where ass_id= ?", $id);
@@ -79,8 +78,9 @@ public function serv($id){
     }
 
 
-
-//evenement affichage complet
+//--------------------------------------------------------------------------
+//Evenement
+//Evenement affichage complet
     public function evenement(){
        
         $requete = $this->db->query("SELECT * FROM Evenements");
@@ -91,7 +91,7 @@ public function serv($id){
 
 
 
-//association affichage d'une association
+//Evenement affichage d'un évenement
     public function eve($id){
         
         $requete = $this->db->query("SELECT * FROM Evenements where eve_id= ?", $id);
@@ -101,9 +101,9 @@ public function serv($id){
 
 
 
-
+//--------------------------------------------------------------
+//Plannning
 //Planning de réservation cantine
-
     public function planning(){
         
         $requete = $this->db->query("SELECT * FROM PlanningRestauration" );
@@ -111,16 +111,15 @@ public function serv($id){
         return $pla;            
     }
 
-// Une ligne du planning
-
+// Une ligne du planning pour affichage les infos lors de la modification
     public function plaEnr($id){
         
         $requete = $this->db->query("SELECT * FROM PlanningRestauration where pla_id= ?", $id);
         $enrPla = $requete->row();
         return $enrPla;            
     }
-
-//Menu
+//-------------------------------------------------------------
+//Cantine
 //Liste Menu
     public function menu(){
         
@@ -129,8 +128,7 @@ public function serv($id){
         return $menu;            
     }
 
-//1 enregistrement
-
+//1 enregistrement pour affichage des infos lors de la confirmation de la suppression. Pas de modification car renvoie sur un pdf => suppression et ajout
     public function menuEnr($id){
         
         $requete = $this->db->query("SELECT * FROM Menu where menu_id=?",$id);
@@ -138,8 +136,9 @@ public function serv($id){
         return $menu;            
     }
 
+//------------------------------------------------------------------------------------------
+//Réservation
 //Liste Réservation
-
     public function reservation(){
         
         $requete = $this->db->query("SELECT * FROM reservationcantine");
@@ -147,34 +146,33 @@ public function serv($id){
         return $res;            
         }
 
-//1 mois de réservation (1 ligne) 
-
-
+//1 réservation à savoir 1 mois 
     public function reservationEnr($id){
         
         $requete = $this->db->query("SELECT * FROM reservationcantine where res_id=?",$id);
         $res = $requete->row();
         return $res;            
     }
-//Test existence enregistrement
+
+//Test existence enregistrement Réservation car une ligne en base pour 2 fichiers pdf (habitant de saint Just et Extérieur). Ceci en cas d'enregistrement. 
 
     public function TestreservationEnr($res){
-
-
         $requete = $this->db->query("SELECT * FROM reservationcantine  WHERE res_mois= ?", $res);
         $nbres = $requete->row();
 
         return (!empty($nbres));
     }
 
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//CRUD
+//Requete de Modification, suppression, ajout pour l'espace administratif. Gràce aux paramètres, ces 3 méthodes sont communes à toutes les bases de données
 
-//Requete de Modification, suppression, ajout pour l'espace administratif
 
 //Ajout Enregistrement
-
     public function insEnr($data, $nomBase){
         $this->db->insert($nomBase, $data);
     }
+
 
 //Modification Enregistrement avec 1 attribut de séléction
     public function ModifEnr($data,$nomBase,$Nomcolonne,$Valeurcolonne){
@@ -183,8 +181,8 @@ public function serv($id){
         $this->db->update($nomBase, $data);
     }
 
+    
 //Suppression d'un Enregistrement avec 1 attribut de séléction
-
     public function SupEnr($nomBase,$Nomcolonne,$Valeurcolonne){
         
         $this->db->where($Nomcolonne,$Valeurcolonne);

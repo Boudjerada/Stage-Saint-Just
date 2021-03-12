@@ -17,7 +17,7 @@
 
     <br>
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12 d-flex justify-content-around">
             <img src="<?php echo base_url("assets/images/MairieSJ/CI.jpg");?>"  class="w-25" alt="Image responsive" title="Image carte identité"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
             
@@ -30,12 +30,21 @@
 
     <br>
 
-    <div class="row">
-        <div class="col-12 d-flex justify-content-around">
-            <a class="btn btn-primary" href="<?= base_url("index.php/MairieSJ/CIetP");?>">Carte identité / Passeport</a>
-            <button class="btn-primary" id="button1">Certificat d'immatriculation de véhicule</button>
-            <button class="btn-primary" id="button2">Demande de Livret de famille</button>
-            <button class="btn-primary" id="button3">Le Recensement Militaire</button>
+    <div class="row mt-5">
+        <div class="col-12 col-sm-3 d-flex justify-content-center mb-2">
+            <a class="btn-lg btn-primary" href="<?= base_url("index.php/MairieSJ/CIetP");?>">Carte identité / Passeport</a>
+        </div>
+     
+        <div class="col-12 col-sm-3 d-flex justify-content-center mb-2">
+            <button class="btn-lg btn-primary" id="button1">Certificat d'immatriculation de véhicule</button>
+        </div>
+       
+        <div class="col-12 col-sm-3 d-flex justify-content-center mb-2">
+            <button class="btn-lg btn-primary" id="button2">Demande de Livret de famille</button>
+        </div>
+      
+        <div class="col-12 col-sm-3 d-flex justify-content-center">
+            <button class="btn-lg btn-primary" id="button3">Le Recensement Militaire</button>
         </div>
     </div>
 
@@ -44,17 +53,11 @@
     <div id="CIV"></div>
 
 
-    <br>
-
-    <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            
-             <h2><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h2>
-          
-        </div>
+<div class="row"> 
+    <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+        <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>"><b>Retour</b></a>
     </div>
-
-    <br>
+</div>
 
 
 

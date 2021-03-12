@@ -71,13 +71,9 @@
         </div>
     </div>
 
-    <div class="row" id="cantine">
-        <br>
-    </div>
-    
     <div class="row" id="cantine"> 
-        <div class="col-12  d-flex justify-content-center">
-            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h1>
+        <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>"><b>Retour</b></a>
         </div>
     </div>
 

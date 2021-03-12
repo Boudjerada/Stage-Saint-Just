@@ -48,14 +48,14 @@ class AdminStJust extends CI_Controller {
                     }
                 else{$_SESSION["messlog3"]= "Mot de passe incorrect";
                     
-                    $this->load->view('header2', $head);
+                   
                     $this->load->view('MairieSJadmin/index');
                 }
             }
             else{
                 $_SESSION["messlog2"]= "Vous êtes pas connu comme Agent de la mairie de Saint Just en Chaussé";
                
-                $this->load->view('header2', $head);
+              
                 $this->load->view('MairieSJadmin/index');
 
                 }
@@ -64,7 +64,7 @@ class AdminStJust extends CI_Controller {
         }
       //formulaire vierge
         else{
-            $this->load->view('header2', $head);
+            
             $this->load->view('MairieSJadmin/index');
         }
 }
@@ -72,7 +72,7 @@ class AdminStJust extends CI_Controller {
 
 
 
-//Page d'accueil
+//Page d'accueil des administrés après authentification
     public function accueil(){
 
         $head['title']= "Accueil administration";
@@ -85,7 +85,7 @@ class AdminStJust extends CI_Controller {
 
 
 
-//Enregistrement Agent de mairie
+//Enregistrement Agent de mairie. Cette méthode est appellé par un contrôleur accessible via la vue d'accueil uniquement pour les administrés de status 0 à savoir les informaticiens de la mairie
     public function enregistrementAgent(){
 
         $head['title']= "Enregistrement Agent Mairie";
@@ -139,7 +139,7 @@ class AdminStJust extends CI_Controller {
             
         
          
-         
+         //Vérification que les 2 mots de passes sont identiques
             if ($this->input->post('us_mp') == $this->input->post('us_mp2'))    {$bool2 = false;} else {$bool2 = true;}
             
 
@@ -187,7 +187,6 @@ class AdminStJust extends CI_Controller {
 }
 
 //Changement Mot de passe
-
     public function changementMdp(){
 
         $head['title']= "Modification mot de passe";
@@ -206,8 +205,6 @@ class AdminStJust extends CI_Controller {
             //Mise en page personaliser du message d'erreur
             $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 
-
-             
             if ($this->form_validation->run() == FALSE){
 
                 $this->load->view('header', $head);
@@ -215,7 +212,6 @@ class AdminStJust extends CI_Controller {
 
             }
             else{
-            
             //Test ancien mtp avec variable de session log
                 $this->load->model('MairieSJ_model');
                 $res = $this->MairieSJ_model->connexion($_SESSION['log']);
@@ -238,22 +234,18 @@ class AdminStJust extends CI_Controller {
                         $this->load->view('header', $head);
                         $this->load->view('MairieSJadmin/changementMdp');
                     }
-                    else{
-
+                    else{//Desctruction du data ne fessant pas parti de la base
                         unset($data["us_mp3"]);
                         unset($data["us_mp2"]);
 
                         $password_hash = password_hash($this->input->post('us_mp'), PASSWORD_DEFAULT);
-             
                         $data['us_mp']=$password_hash;
-
-
+                         
                         $this->MairieSJ_model->ModifEnr($data,'administration','us_log',$_SESSION['log']);
                         //$this->db->where('us_log',$_SESSION['log']);
                         //$this->db->update('administration', $data);
-
+                        //Variable pour message de confirmation javascript
                         $_SESSION["mdpmodif"]="ok";
-                        
                         redirect("AdminStJust/changementMdp");
                     }
                 }
@@ -263,13 +255,11 @@ class AdminStJust extends CI_Controller {
         $this->load->view('header', $head);
         $this->load->view('MairieSJadmin/changementMdp');
         }
-
     }
 
 
 
 //Liste contact Pour CRUD
-
 //Partie service mairie   
 
     public function listecontactsmairie(){
@@ -313,10 +303,9 @@ public function modifserv($id){
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     
     
-
-        if ($this->form_validation->run() == FALSE)
+    if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
-                $this->load->view('header', $head);
+                $this->load->view('header3', $head);
                 $this->load->view('MairieSJadmin/contact/modifserv', $aView);
 
             }
@@ -337,7 +326,7 @@ public function modifserv($id){
     } 
     else{ // 1er appel de la page: affichage du formulaire 
             
-            $this->load->view('header', $head);
+            $this->load->view('header3', $head);
             $this->load->view('MairieSJadmin/contact/modifserv', $aView);
           
         }
@@ -345,7 +334,7 @@ public function modifserv($id){
 
     
 
-//association ajout
+//Contact service mairie ajout
     public function ajoutserv(){
 
         $head['title']= "Ajout contact service Mairie";
@@ -403,7 +392,7 @@ public function modifserv($id){
 }
 
 
-//association suppression
+//Contact service mairie suppression
 public function suppserv($id){
 
     $head['title']= "Suppression contact service Mairie";
@@ -425,7 +414,7 @@ public function suppserv($id){
     } 
     else 
     { // 1er appel de la page: affichage du formulaire de suppression 
-        $this->load->view('header', $head);
+        $this->load->view('header3', $head);
         $this->load->view('MairieSJadmin/contact/suppserv',$aView);
     }
 
@@ -479,7 +468,7 @@ public function suppserv($id){
 
             if ($this->form_validation->run() == FALSE)
                 { // Echec de la validation, on réaffiche la vue formulaire
-                    $this->load->view('header', $head);
+                    $this->load->view('header3', $head);
                     $this->load->view('MairieSJadmin/contact/modifassoc', $aView);
 
                 }
@@ -500,7 +489,7 @@ public function suppserv($id){
                }
         } 
         else{ // 1er appel de la page: affichage du formulaire 
-                $this->load->view('header', $head);
+                $this->load->view('header3', $head);
                 $this->load->view('MairieSJadmin/contact/modifassoc', $aView);
               
             }
@@ -587,18 +576,14 @@ public function suppserv($id){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header', $head);
+            $this->load->view('header3', $head);
             $this->load->view('MairieSJadmin/contact/suppassoc',$aView);
         }
 
     }
 
-
-
 //Agenda
-
 //Evenement
-
 //Liste
     public function evenement(){
 
@@ -636,14 +621,14 @@ public function suppserv($id){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header', $head);
+            $this->load->view('header3', $head);
             $this->load->view('MairieSJadmin/evenement/suppeve',$aView);
         }
 
     }
 
 
-//association modification
+//Evenement modification
 public function modifeve($id){
 
     $head['title']= "Modification Manifestation";
@@ -685,7 +670,7 @@ public function modifeve($id){
 
         if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
-                $this->load->view('header', $head);
+                $this->load->view('header3', $head);
                 $this->load->view('MairieSJadmin/evenement/modifeve', $aView);
 
             }
@@ -700,14 +685,12 @@ public function modifeve($id){
            }
     } 
     else{ // 1er appel de la page: affichage du formulaire 
-        $this->load->view('header', $head);
+        $this->load->view('header3', $head);
         $this->load->view('MairieSJadmin/evenement/modifeve', $aView);
           
         }
     
-    
-    
-    }
+}
 
 
 //manifestation ajout
@@ -818,7 +801,7 @@ public function modifeve($id){
   
           if ($this->form_validation->run() == FALSE)
               { // Echec de la validation, on réaffiche la vue formulaire
-                  $this->load->view('header', $head);
+                  $this->load->view('header3', $head);
                   $this->load->view('MairieSJadmin/cantine/modifPla', $aView);
   
               }
@@ -833,7 +816,7 @@ public function modifeve($id){
              }
       } 
       else{ // 1er appel de la page: affichage du formulaire 
-          $this->load->view('header', $head);
+          $this->load->view('header3', $head);
           $this->load->view('MairieSJadmin/cantine/modifPla', $aView);
             
           }
@@ -883,14 +866,14 @@ public function suppMenu($id){
     } 
     else 
     { // 1er appel de la page: affichage du formulaire de suppression 
-        $this->load->view('header', $head);
+        $this->load->view('header3', $head);
         $this->load->view('MairieSJadmin/cantine/suppMenu',$aView);
     }
 
 }
 
 
-//Ajout d'une semaine de menu, ne pas oublier de joindre le fichier pdf dans le dossier Cantine/Menu
+//Ajout d'une semaine de menu
 
 public function ajoutMenu(){
 
@@ -900,7 +883,6 @@ public function ajoutMenu(){
     
     if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
-    
             $data = $this->input->post();
 
         // Définition du filtre, ici la valeur est obligatoire pour le champ 'debut'
@@ -977,11 +959,8 @@ public function ajoutMenu(){
    else{ // 1er appel de la page: affichage du formulaire 
     $this->load->view('header', $head);
     $this->load->view('MairieSJadmin/cantine/ajoutMenu');
-             
-       }
-   
-   
-   }
+        }
+    }
 
 //Fiche réservation cantine
     public function reservation(){
@@ -1020,7 +999,7 @@ public function ajoutMenu(){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header', $head);
+            $this->load->view('header3', $head);
             $this->load->view('MairieSJadmin/cantine/supRes',$aView);
         }
 

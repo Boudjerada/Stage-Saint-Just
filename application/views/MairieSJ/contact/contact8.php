@@ -1,7 +1,7 @@
 <?php
  echo 
  
- "<div class='d-flex justify-content-center'>".
+ "<div class='d-flex justify-content-center ml-3 mr-3'>".
  
  "<p>"."<b>"."Mmes BRIDET – DELORT – LAVAE – MONTAGNE – ROUX"."</b>"."<br>". 
 

@@ -1,17 +1,30 @@
 <?php if (isset($_SESSION['log'])){?>
     
+    <div id="image">
     <br>
-    
-    
+
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12">
+            <h2 class="d-flex justify-content-center"><Font color="blue">Association</font></h2>
+            <h2 class="d-flex justify-content-center"><Font color="blue">Ajout cordonnées</font></h2>
+            
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
     
-    <br>
-    <br>
-    
+ <br>
    
     <?php echo form_open(); ?>
                 <div class="form-group">
@@ -25,12 +38,17 @@
                     <?php echo form_error('ass_mail'); // affiche l'erreur du champs mail niveau syntaxique?>
                 
                 </div>  
+                <br>
                 <div class="d-flex justify-content-center" name ="actionProduit">
                     <h1><button class="btn btn-primary" type="submit" onclick="verif();">Enregistrer</button></h1>
                     <h1><a class="btn btn-primary ml-3"   href="<?= base_url("index.php/AdminStJust/listecontactassociation");?>">Retour</a></h1>
                 </div>
 
     </form>
+
+<br>
+<br>
+<br>
 
 <script>
 //vérifie si on envoi ou non le formulaire 
@@ -47,7 +65,7 @@
 </script>
 
    
-    
+</div>   
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

@@ -26,13 +26,13 @@
 
     <div class="row">
         <div class="col-12 col-sm-4">
-            <h2 class='d-flex justify-content-center'><button id="btn1" class="btn-primary" >INFO PERISCOLAIRE</button></h2>
+            <h2 class='d-flex justify-content-center'><button id="btn1" class="btn-lg  btn-primary" >INFO PERISCOLAIRE</button></h2>
         </div>
         <div class="col-12 col-sm-4">
-            <h2 class='d-flex justify-content-center'><button id="btn2" class="btn-primary" >INFOS ACCUEIL DE LOISIRS</button></h2>
+            <h2 class='d-flex justify-content-center'><button id="btn2" class="btn-lg  btn-primary" >INFOS ACCUEIL DE LOISIRS</button></h2>
         </div>
         <div class="col-12 col-sm-4">
-            <h2 class='d-flex justify-content-center'><button id="btn3" class="btn-primary" >CONTACT DES STRUCTURES D'ACCUEIL</button></h2>
+            <h2 class='d-flex justify-content-center'><button id="btn3" class="btn-lg  btn-primary" >CONTACT DES STRUCTURES D'ACCUEIL</button></h2>
         </div>
     </div>
 
@@ -40,10 +40,10 @@
 
     <div id="div1"></div>
 
-    <br>
-    
-    <div class="col-12  d-flex justify-content-center">
-        <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/jeunesse");?>">Retour</a></h1>
+    <div class="row"> 
+        <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/jeunesse");?>"><b>Retour</b></a>
+        </div>
     </div>
     
 

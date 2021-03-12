@@ -1,15 +1,18 @@
 <?php if (isset($_SESSION['log'])){?>
-    <br>
+<div id="image">
+
+<br>
+
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        </div>
+        <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
-    
-    <br>
-    <br>
-    
-    <p>Les jours sont a ecrire entre 1 et 31, sauf le premier du mois à ecrire 1ER. Les mois sont a écrire en lettre Majuscules sans accent. Enfin l'année a écrire en 4 chiffres Ceci pour compatibilité avec l'ouverture du fichier pdf correspondant à placer dans le répertoire Cantine/Menu</p>
+
+    <p class="ml-3 mr-3"><FONT color="red">Les jours sont a ecrire entre 1 et 31, sauf le premier du mois à ecrire 1ER. Les mois sont a écrire en lettre Majuscules sans accent. Enfin l'année a écrire en 4 chiffres. Ceci pour compatibilité avec l'ouverture du fichier pdf correspondant, fichier à joindre a cette enregistrement.</FONT></p>
 
     <?php echo form_open_multipart(); ?>
                 <div class="form-group">
@@ -28,14 +31,13 @@
 
                     <label for="annee"><b>Année :</b></label><input type="text" class="form-control" name="annee" id="annee" value="<?php echo set_value('annee');?>">
                     <?php echo form_error('annee'); // affiche l'erreur du champs nom obligatoire?>
-                    <br>
+                  
                     <label for="file"><b>Fichier PDF du Menu :</b></label>
                     <br>
                     <input type="file" name="fichier" id="fichier">
                     <br>
-                    <br>
+                   
                     <?php if  (isset ($_SESSION["fich"])){?> <span id="alerte-mail" class="alert alert-danger"><?=$_SESSION['fich'];?></span><?php }?>
-                    <br>
                     
                 </div>
 
@@ -61,7 +63,7 @@
 </script>
 
    
-    
+</div>   
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

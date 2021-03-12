@@ -1,6 +1,8 @@
 <?php if (isset($_SESSION['log'])){?>
 
 <div id="image">
+    <br>
+    <h2 class='d-flex justify-content-center mt-3'><font color="green">Espace administration</font></h2>
         <br>
                     <div id="RGPD">
                     Les informations recueillies sont enregistrées dans un fichier informatisé par le responsable informatique de la mairie de Saint Just   
@@ -22,14 +24,14 @@
         
 
 <br>
-
-    <h1 class='d-flex justify-content-center'><font color="green">Espace administration</font></h1>
-    
-    <br>
+<br>
 
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
     
@@ -37,45 +39,42 @@
     <br>
     
     <div class="row"> 
-        <div class="col-12">
-            <h6>Liens de mise à jour des contacts :
-            <br> 
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/listecontactsmairie");?>">Contact Service Mairie</a>
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/listecontactassociation");?>">Contact Association</a>
-            </h6>
+        <div class="col-12 col-xl-4 mb-3">
+            <h6 class='d-flex justify-content-center'>Liens de mise à jour des contacts :</h6>
+            <h6><a class='d-flex justify-content-center' href="<?= base_url("index.php/AdminStJust/listecontactsmairie");?>">Contact Service Mairie</a></h6>
+            <h6><a class='d-flex justify-content-center' href="<?= base_url("index.php/AdminStJust/listecontactassociation");?>">Contact Association</a></h6>
+            
         </div>
-    </div>
+    
 
-    <br>
+    
 
-    <div class="row"> 
-        <div class="col-12">
-            <h6>Agenda :
-            <br> 
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/evenement");?>">Manifestation</a>
-                <a class='ml-2' href=#>Permanence des élus</a>
-                <a class='ml-2' href=#>Permanence diverses</a>
-            </h6>
+        <div class="col-12 col-xl-4 mb-3">
+            <h6 class='d-flex justify-content-center'>Agenda :</h6>
+            <h6><a class='d-flex justify-content-center' href="<?= base_url("index.php/AdminStJust/evenement");?>">Manifestation</a></h6>
+            <h6><a class='d-flex justify-content-center' href=#>Permanence des élus</a></h6>
+            <h6><a class='d-flex justify-content-center' href=#>Permanence diverses</a></h6>
+            
         </div>
-    </div>
+   
 
-    <br>
+    
 
 <?php 
     if ( ($_SESSION['status'] == 0) || ($_SESSION['status'] == 1) ){?>
 
-    <div class="row"> 
-        <div class="col-12">
-            <h6>Cantine :
-            <br> 
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/planning");?>">Planning de réservation</a>
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/menu");?>">Menu</a>
-                <a class='ml-2' href="<?= base_url("index.php/AdminStJust/reservation");?>">Fiche de réservation</a>
+        <div class="col-12 col-xl-4">
+            <h6 class='d-flex justify-content-center'>Cantine :</h6>
+            <h6><a class='d-flex justify-content-center'  href="<?= base_url("index.php/AdminStJust/planning");?>">Planning de réservation</a></h6>
+            <h6><a class='d-flex justify-content-center'  href="<?= base_url("index.php/AdminStJust/menu");?>">Menu</a></h6>
+            <h6><a class='d-flex justify-content-center'  href="<?= base_url("index.php/AdminStJust/reservation");?>">Fiche de réservation</a></h6>
             </h6>
         </div>
+<?php } ?>
+
     </div>
 
-    <?php } ?>
+   
 
 
 </div>

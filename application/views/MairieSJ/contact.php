@@ -6,14 +6,14 @@
     <br>
     <br>
 
-    <h1 class="d-flex justify-content-center"><font COLOR="black">Liste de Contacts utiles</h1></font>
+    <h1 class="d-flex justify-content-center ml-3 mr-3"><font COLOR="black">Liste de Contacts utiles</h1></font>
 
 <br>
 
 <div class="row"> 
     <div class="col-12">
         <div class="form-group">
-            <h3 class="d-flex justify-content-center"><label for="pla_id"><b><FONT color="blue">Choisir le service concerné :</FONT></b></label></h3>
+            <h3 class="d-flex justify-content-center ml-3 mr-3"><label for="pla_id"><b><FONT color="blue">Choisir le service concerné :</FONT></b></label></h3>
         </div>
     </div>
 </div>
@@ -55,11 +55,9 @@
 
 <div id="div1"></div>
     
-<br>
-    
     <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>">Retour</a></h1>
+        <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/liens");?>"><b>Retour</b></a>
         </div>
     </div>
 
@@ -67,10 +65,12 @@
 </div>
 
 
+ 
 <!--fichiers Javascript nécessaires à Bootstrap-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
 
 <script src="<?php echo base_url("assets/js/SJ/script_contact.js");?>"></script>
 </body>

@@ -1,5 +1,6 @@
 <?php if (isset($_SESSION['log'])){?> 
 
+<div id="image">
 
     <div class="table-responsive"> <!--tableau responsive-->
         <table class="table table-hover table-bordered">
@@ -20,13 +21,13 @@
 
         <?php foreach ($evenement as $row){
                 echo "<tr>";
-                    echo "<th>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_date."</b>"."</h6>"."</th>";
+                    echo "<th class='table-warning'>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_date."</b>"."</h6>"."</th>";
                     echo "<th>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_manif."</b>"."</h6>"."</th>";
                     echo "<th>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_Orga."</b>"."</h6>"."</th>";
                     echo "<th>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_contact."</b>"."</h6>"."</th>";
                     echo "<th>"."<h6 class='d-flex justify-content-center'>"."<b>".$row->eve_tel."</b>"."</h6>"."</th>";?>
-                    <th><a  class='d-flex justify-content-center' href="<?= base_url('index.php/AdminStJust/modifeve/'.$row->eve_id);?>">Modifier</a></th>
-                    <th><a  class='d-flex justify-content-center' href="<?= base_url('index.php/AdminStJust/suppeve/'.$row->eve_id);?>">Supprimer</a></th>
+                    <th class='table-warning'><a  class='d-flex justify-content-center' href="<?= base_url('index.php/AdminStJust/modifeve/'.$row->eve_id);?>">Modifier</a></th>
+                    <th class='table-warning'><a  class='d-flex justify-content-center' href="<?= base_url('index.php/AdminStJust/suppeve/'.$row->eve_id);?>">Supprimer</a></th>
                   </tr>
       <?php  }
         ?>
@@ -48,6 +49,7 @@
 
     <br>
 
+</div>
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

@@ -28,11 +28,10 @@
     </div>
 
     <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
+        <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>"><b>Retour</b></a>
         </div>
     </div>
-
 
 </div>
 

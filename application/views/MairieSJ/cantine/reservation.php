@@ -3,7 +3,7 @@
 <br>  
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
@@ -40,8 +40,8 @@
 </div>
 
 <div class="row"> 
-    <div class="col-12  d-flex justify-content-center">
-        <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
+    <div class="col-12  d-flex justify-content-center mb-3 mt-4">
+         <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>"><b>Retour</b></a>
     </div>
 </div>
 

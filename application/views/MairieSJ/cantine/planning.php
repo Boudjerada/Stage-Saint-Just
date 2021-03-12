@@ -1,6 +1,6 @@
 <div id="cantine">
 <br>
-<h1 class="d-flex justify-content-center"><FONT COLOR="blue"> Planning de réservation</FONT></h1>
+<h1 class="d-flex justify-content-center ml-5 mr-5"><FONT COLOR="blue"> Planning de réservation</FONT></h1>
 
     <br>
 
@@ -33,20 +33,13 @@
     </div>
 
 
-    <br>
-    <br>
-    
     <div class="row"> 
-        <div class="col-12  d-flex justify-content-center">
-            <h1><a class="btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>">Retour</a></h1>
+        <div class="col-12  d-flex justify-content-center mb-5 mt-4">
+            <a class="btn-lg btn-success" href="<?= base_url("index.php/MairieSJ/cantine");?>"><b>Retour</b></a>
         </div>
     </div>
 
 </div>
-
-
- 
-
 </div>
 
 

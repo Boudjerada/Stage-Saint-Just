@@ -1,9 +1,10 @@
 <?php if (isset($_SESSION['log'])){?>
 
-<h1 class="d-flex justify-content-center"><FONT COLOR="blue"> Planning de réservation</FONT></h1>
+<div id="image">
 
 <br>
-
+<h3 class="d-flex justify-content-center "><FONT COLOR="blue"> Planning de réservation</FONT></h3>
+<br>
 <div class="table-responsive"> <!--tableau responsive-->
     
     <table class="table table-hover table-bordered">
@@ -22,9 +23,9 @@
             
             <tr>
                 <th><h3 class="d-flex justify-content-center"><?= $row->pla_annee ?></h3></th>
-                <th><h3 class="d-flex justify-content-center"><?= $row->pla_mois ?></h3></th>
+                <th class='table-warning'><h3 class="d-flex justify-content-center"><?= $row->pla_mois ?></h3></th>
                 <th><h3 class="d-flex justify-content-center"><?= $row->pla_date ?></h3></th>
-                <th><h3 class="d-flex justify-content-center"><a class="btn-success" href="<?= base_url('index.php/AdminStJust/modifPlanning/'.$row->pla_id);?>">Modifier</a></h3></th>
+                <th class='table-warning'><h3 class="d-flex justify-content-center"><a class="btn-success" href="<?= base_url('index.php/AdminStJust/modifPlanning/'.$row->pla_id);?>">Modifier</a></h3></th>
             </tr>
 
         <?php } ?>
@@ -33,19 +34,15 @@
     </table>
 </div>
 
-
-<br>
-<br>
-
 <div class="row"> 
     <div class="col-12  d-flex justify-content-center">
         <h1><a class="btn btn-success" href="<?= base_url("index.php/AdminStJust/accueil");?>">Retour</a></h1>
     </div>
 </div>
 
+<br>
 
 </div>
-
 </div>
 
 

@@ -1,27 +1,29 @@
 
-    <?php if (isset($_SESSION['log'])){?> 
+<?php if (isset($_SESSION['log'])){?> 
+
+<div id="image">
         
         <div class="table-responsive"> <!--tableau responsive-->
         <table class="table table-hover table-bordered">
 
             <thead>
                 <tr class="table-active">
-                    <th><h3>Fonction</h3></th>
-                    <th><h3>Téléphone</h3></th>
-                    <th><h3>Email</h3></th>
-                    <th><h3>Modification</h3></th>
-                    <th><h3>Suppression</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Fonction</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Téléphone</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Email</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Modification</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Suppression</h3></th>
                 </tr>
             <thead>
             <tbody>
 
         <?php foreach ($association as $row){
                 echo "<tr>";
-                    echo "<th>".$row->ass_nom."</th>";
-                    echo "<th>".$row->ass_tel."</th>";
-                    echo "<th>".$row->ass_mail."</th>";?>
-                    <th><a  href="<?= base_url('index.php/AdminStJust/modifassoc/'.$row->ass_id);?>">Modifier</a></th>
-                    <th><a  href="<?= base_url('index.php/AdminStJust/suppassoc/'.$row->ass_id);?>">Supprimer</a></th>
+                    echo "<th class='table-warning'>"."<p class='d-flex justify-content-center'>".$row->ass_nom."</p>"."</th>";
+                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->ass_tel."</p>"."</th>";
+                    echo "<th>"."<p class='d-flex justify-content-center'>".$row->ass_mail."</p>"."</th>";?>
+                    <th class='table-warning'><a  class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/modifassoc/'.$row->ass_id);?>">Modifier</a></th>
+                    <th class='table-warning'><a class="d-flex justify-content-center" href="<?= base_url('index.php/AdminStJust/suppassoc/'.$row->ass_id);?>">Supprimer</a></th>
                   </tr>
       <?php  }
         ?>
@@ -43,6 +45,7 @@
 
     <br>
 
+</div>
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->

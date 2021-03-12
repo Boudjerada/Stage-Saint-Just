@@ -1,10 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr"> <!--indique la langue dans laquelle la page web est rédigéé aux robots de référencement ou aux logiciels de synthése vocale-->
+<!--les balises de la partie head ne sont pas affichées à l'exeption de title-->
+
+<head>
+    <!--meta permet de fourni des indications différentes du contenu de la page web -->
+    <meta charset="UTF-8"><!--permet de spécifier aux navigateurs l'encodage de la page web, il s'agit là de la valeur standard qui évite les pbs d'affichages des caractères spéciaux-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0",shrink-to-fit=no>
+    <link rel="stylesheet" href="../././assets/css/styles.css">
+  
+    <title>Connexion</title>
+    <!--on importe Bootstrap via une URL pointant sur un CDN (un serveur externe hébergeant des fichiers) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container-fluid border" id="image"> <!--container global de la page-->
 
 
-    <br>
+    <div class="row mt-4 mb-5">
+        <div class="col-12">
 
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <h2 class="col-12 d-flex justify-content-center"><Font color="blue">Espace connexion des administrés de la ville de Saint Just en Chaussée</font></h2>
+            <h5 class="d-flex justify-content-center"><Font color="blue">Ville de Saint Just en Chaussée</Font></h5>
+            <h5 class="d-flex justify-content-center"><Font color="blue">Espace connexion des administrés</Font></h5>
+           
         </div>
     </div>
 
@@ -12,11 +30,16 @@
     <br>
 
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
+    <br>
+    <br>
     <br>
 
     <?php echo form_open(); ?>
@@ -43,6 +66,9 @@
         </div>
     </form>
 
+    <br>
+    <br>
+    <br>
     <br>
 
 </div>

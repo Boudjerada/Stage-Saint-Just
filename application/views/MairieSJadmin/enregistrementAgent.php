@@ -7,11 +7,14 @@
     }
 ?>
 
+<div id="image">
     <br>
-
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <h2 class="col-12 d-flex justify-content-center"><Font color="blue">Espace d'inscription des administrés de la ville de Saint Just en Chaussée</font></h2>
+        <div class="col-12">
+
+            <h2 class="d-flex justify-content-center"><Font color="blue">Agent de mairie</font></h2>
+            <h3 class="d-flex justify-content-center"><Font color="blue">Formulaire d'inscription</font></h3>
+            
         </div>
     </div>
 
@@ -19,15 +22,18 @@
     <br>
 
     <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie");?>"  alt="Image responsive" title="Image promotion"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+        <div class="col-12 col-sm-6 d-flex justify-content-center">
+            <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+         </div>
+         <div class="col-12 col-sm-6 d-flex justify-content-center"> 
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
     <br>
 
-    <h2 class="d-flex justify-content-center"><b>Formulaire d'inscription Agent de mairie</b></h2>  
-        <p>Tout les champs sont obligatoires</p>
+   
+        <p class="ml-3"><FONT color="red">Tout les champs sont obligatoires</FONT></p>
         <?php echo form_open(); ?>
             <div class="form-group">
                 <label for="us_nom"><b>Nom</b></label><input type="text" class="form-control" name="us_nom" id="us_nom" value="<?=set_value('us_nom');?>" placeholder="Veuillez saisir le nom de l'agent" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
@@ -64,7 +70,7 @@
                 <label for="us_mp2"><b>Confirmer mot de passe</b></label><input type="password" class="form-control" name="us_mp2" id="us_mp2" placeholder="Veuillez confirmer le mot de passe de connexion" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <br>
                 <?php if  (isset ($_SESSION["messmdp"])){?> <span id="alerte-mail" class="alert alert-danger"><?=$_SESSION['messmdp'];?></span><?php }?>
-                <br>
+               
             </div>
             <div class="d-flex justify-content-center" name = "actioninscription">
                 <h1><button class="btn btn-dark" type="submit"  onclick="verif();">Inscription</button></h1>
@@ -88,7 +94,7 @@ function verif(){
 }
 </script>
 
-
+</div>
 </div>
 
 <!--fichiers Javascript nécessaires à Bootstrap-->
