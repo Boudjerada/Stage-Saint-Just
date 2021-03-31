@@ -28,10 +28,6 @@
 }
 
 
-
-
-
-
 /*Page Contact*/
 
 #cont_contact{
@@ -69,13 +65,11 @@
 
 
 
-/*Page CI et passeport background*/
+/*Image d'arrière plan pour certaines vues*/
 #image{
-    background-color: #aaa;
     background-image: url("../images/MairieSJ/filigrame2.jpg");
     background-position: top;
     background-repeat: repeat;
-    
 }
 
 

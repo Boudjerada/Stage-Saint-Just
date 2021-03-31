@@ -22,6 +22,25 @@
           
         </div>
 
+        <div class="col-12 col-sm-6  mt-4">
+            
+            <div class="d-flex justify-content-center">
+                <img class="w-50" src="<?php echo base_url("assets/images/MairieSJ/college.jpg");?>"   alt="Image responsive" title="Image Collége"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            </div>
+            <br>
+            <br>
+            <div class="d-flex justify-content-center">
+                <button class="btn btn-primary" id="btn4">Le Collège Louise Michel</button>
+            </div>
+          
+        </div>
+
+      
+
+    </div>
+
+    <div class="row">
+
         <div class="col-12 col-sm-6  mt-5">
             
             <div class="d-flex justify-content-center">
@@ -35,35 +54,18 @@
             </div>
           
         </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-12 col-sm-6  mt-4">
-            
-            <div class="d-flex justify-content-center">
-                <img class="w-50" src="<?php echo base_url("assets/images/MairieSJ/college.jpg");?>"   alt="Image responsive" title="Image musique"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
-            </div>
-            <br>
-            <br>
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-primary" id="btn4">Le Collège Louise Michel</button>
-            </div>
-          
-        </div>
    
         <div class="col-12 col-sm-6  mt-4">
             <br>
-            <br>
-            <div class="d-flex justify-content-center">
-                <img class="w-50" src="<?php echo base_url("assets/images/MairieSJ/ecole.jpg");?>"   alt="Image responsive" title="Image musique"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+           
+            <div class="d-flex justify-content-center mt-5">
+                <img class="w-50" src="<?php echo base_url("assets/images/MairieSJ/ecole.jpg");?>"  alt="Image responsive" title="Image École"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
             </div>
             <br>
             <br>
             <br>
-            <br>
-            <br>
+      
+            
             <div class="d-flex justify-content-center">
                 <button class="btn btn-primary" id="btn5">Ecole élémentaire et maternelle</button>
             </div>

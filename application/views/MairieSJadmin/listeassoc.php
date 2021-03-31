@@ -8,7 +8,7 @@
 
             <thead>
                 <tr class="table-active">
-                    <th><h3 class="d-flex justify-content-center">Fonction</h3></th>
+                    <th><h3 class="d-flex justify-content-center">Nom</h3></th>
                     <th><h3 class="d-flex justify-content-center">Téléphone</h3></th>
                     <th><h3 class="d-flex justify-content-center">Email</h3></th>
                     <th><h3 class="d-flex justify-content-center">Modification</h3></th>

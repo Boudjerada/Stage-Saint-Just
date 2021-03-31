@@ -41,7 +41,7 @@
         <p class="d-flex justify-content-center ml-3 mr-3">03 44 78 67 30</p>
         <p class="d-flex justify-content-center ml-3 mr-3">http://direction571.wix.com/ecole</p>
 
-        <p class="d-flex justify-content-center ml-3 mr-3"><b>Permanence secrétariat :</b>&nbsp;le lundi, mardi et mercredi</p>
+        <div><b  class="d-flex justify-content-center ml-3 mr-3">Permanence secrétariat :</b>  <p  class="d-flex justify-content-center ml-3 mr-3"> le lundi, mardi et mercredi</p></div>
 
     </div>
 </div>

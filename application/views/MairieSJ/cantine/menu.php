@@ -15,7 +15,7 @@
         <?php foreach ($menu as $row){
         
         
-            $fich="MENUS DU ".$row->debut." ".$row->moisd." AU ".$row->fin." ".$row->moisf;
+            $fich="MENUS_DU_".$row->debut."_".$row->moisd."_AU_".$row->fin."_".$row->moisf;
         ?>
         
             <a class="btn btn-success d-flex justify-content-center" href="<?php echo base_url("Cantine/Menu/$fich.pdf");?>"  target="_blank"><FONT COLOR="black"><b><?= "Menu du ".$row->debut." ".$row->moisd." au ".$row->fin." ".$row->moisf." ".$row->annee?></b></FONT></a>

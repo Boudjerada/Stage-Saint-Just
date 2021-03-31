@@ -1,4 +1,4 @@
-/*RGPD, Réglement salle cantine, planing réservation cantine*/
+/*RGPD*/
 function replier()
 {
 document.getElementById('RGPD').style.overflow = 'hidden';

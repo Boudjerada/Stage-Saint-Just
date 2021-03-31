@@ -7,7 +7,7 @@
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
          </div>
          <div class="col-12 col-sm-6 d-flex justify-content-center"> 
-            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire3.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
@@ -27,7 +27,7 @@
             <?php foreach ($menu as $row){?>
             <tr>
                 <th class='table-warning'>
-                    <?php $fich="MENUS DU ".$row->debut." ".$row->moisd." AU ".$row->fin." ".$row->moisf;?>
+                    <?php $fich="MENUS_DU_".$row->debut."_".$row->moisd."_AU_".$row->fin."_".$row->moisf; ?>
                     <a class="btn-lg d-flex justify-content-center" href="<?php echo base_url("Cantine/Menu/$fich.pdf");?>"  target="_blank"><FONT COLOR="blue"><?= "Menu du ".$row->debut." ".$row->moisd." au ".$row->fin." ".$row->moisf." ".$row->annee?></FONT></a>
                 </th>
                 <th>

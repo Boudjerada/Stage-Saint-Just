@@ -25,7 +25,7 @@
                 <th><h3 class="d-flex justify-content-center"><?= $row->pla_annee ?></h3></th>
                 <th class='table-warning'><h3 class="d-flex justify-content-center"><?= $row->pla_mois ?></h3></th>
                 <th><h3 class="d-flex justify-content-center"><?= $row->pla_date ?></h3></th>
-                <th class='table-warning'><h3 class="d-flex justify-content-center"><a class="btn-success" href="<?= base_url('index.php/AdminStJust/modifPlanning/'.$row->pla_id);?>">Modifier</a></h3></th>
+                <th class='table-warning'><h3 class="d-flex justify-content-center"><a class="btn btn-success" href="<?= base_url('index.php/AdminStJust/modifPlanning/'.$row->pla_id);?>">Modifier</a></h3></th>
             </tr>
 
         <?php } ?>

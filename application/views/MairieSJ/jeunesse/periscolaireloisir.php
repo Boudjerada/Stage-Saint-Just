@@ -2,7 +2,7 @@
 
     <div class="row">   
         <div class="col-12 d-flex justify-content-center mt-4">
-            <h1>Accueil périscolaire et de loisir</h1>
+            <h1 class="ml-4 mr-4">Accueil périscolaire et de loisir</h1>
         </div>
     </div>
     

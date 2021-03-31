@@ -24,7 +24,7 @@
     <br>
 
     <h2 class="d-flex justify-content-center"><b>Formulaire de demande</b></h2>  
-        <p><Font color="red">Tout les champs sont obligatoires</Font></p>
+        <p class="ml-3"><Font color="red">Tout les champs sont obligatoires</Font></p>
         <?php echo form_open(); ?>
             <div class="form-group">
                 <label for="nom"><b>Nom</b></label><input type="text" class="form-control" name="nom" id="us_nom" value="<?=set_value('nom');?>" placeholder="Veuillez saisir votre nom" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
@@ -46,7 +46,12 @@
                         <option value="Opus">Opus</option>
                         <option value="Salle de la Landre">Salle de la Landre</option>
                     </select>
+                
+                <div class="form-check ml-3 mt-3">
+                    <input class="form-check-input is-invalid" type="checkbox" value="" id="acceptation" required>
+                    <label class="form-check-label" for="acceptation">J'accepte le traitement informatique de ce formulaire</label>
                 </div>
+            </div>
                 
             <div class="d-flex justify-content-center" name = "actioninscription">
                 <button class="btn btn-dark" type="submit"  onclick="verif();">Envoyer</button>

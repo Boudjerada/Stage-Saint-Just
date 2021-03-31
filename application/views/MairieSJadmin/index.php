@@ -5,8 +5,7 @@
 <head>
     <!--meta permet de fourni des indications différentes du contenu de la page web -->
     <meta charset="UTF-8"><!--permet de spécifier aux navigateurs l'encodage de la page web, il s'agit là de la valeur standard qui évite les pbs d'affichages des caractères spéciaux-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0",shrink-to-fit=no>
-    <link rel="stylesheet" href="../././assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/styles.css");?>">
   
     <title>Connexion</title>
     <!--on importe Bootstrap via une URL pointant sur un CDN (un serveur externe hébergeant des fichiers) -->
@@ -21,7 +20,7 @@
         <div class="col-12">
 
             <h5 class="d-flex justify-content-center"><Font color="blue">Ville de Saint Just en Chaussée</Font></h5>
-            <h5 class="d-flex justify-content-center"><Font color="blue">Espace connexion des administrés</Font></h5>
+            <h5 class="d-flex justify-content-center"><Font color="blue">Espace Employé Mairie</Font></h5>
            
         </div>
     </div>
@@ -34,7 +33,7 @@
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
          </div>
          <div class="col-12 col-sm-6 d-flex justify-content-center"> 
-            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire3.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 

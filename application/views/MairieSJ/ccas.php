@@ -18,12 +18,13 @@
     
     <div class="col-12 mt-5 col-xl-6">
         <br>
-        <h4 class='d-flex justify-content-center ml-3 mr-3'>Adresse et horaires d’ouverture du CCAS :</h4>
+        <h5 class='d-flex justify-content-center ml-3 mr-3'><b>Adresse et horaires d’ouverture :</b></h5>
         <h6 class='d-flex justify-content-center ml-3 mr-3'>Rue Foch – 60130 St Just en Chaussée</h6>
         <h4 class='d-flex justify-content-center ml-3 mr-3'>Du lundi au vendredi :</h4>
         <h5 class='d-flex justify-content-center ml-3 mr-3'>08h30- 12h00 / 13h30-17h00</h5>
-        <h5 class='d-flex justify-content-center ml-3 mr-3'>Contact: Amélie FLAMAND- Téléphone 03.44.78.66.91</h5>
-        <h5 class='d-flex justify-content-center ml-3 mr-3'>Mail: ccas@mairie-saintjustenchaussee.fr</h5>
+        <h5 class='d-flex justify-content-center ml-3 mr-3'>Contact: Amélie FLAMAND</h5>
+        <h5 class='d-flex justify-content-center ml-3 mr-3'>Téléphone 03.44.78.66.91</h5>
+        <h6 class='d-flex justify-content-center ml-3 mr-3'>ccas@mairie-saintjustenchaussee.fr</h6>
     </div>
 
 </div>

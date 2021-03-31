@@ -339,7 +339,6 @@ $_SESSION["resok"] ="ok";
 
     }
 
-
 //Réservation liste des mois pour téléchargement du fichier pdf du mois séléctionné
 
     public function reservation(){
@@ -356,7 +355,6 @@ $_SESSION["resok"] ="ok";
 
         }
 
-
 //Liste Menu par semaine avec téléchargement du fichier pdf de la semaine séléctionné
     public function menu(){
 
@@ -372,7 +370,6 @@ $_SESSION["resok"] ="ok";
 
     }
 
-
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //Lien Police Municipal
@@ -386,6 +383,7 @@ $_SESSION["resok"] ="ok";
 
     }
 
+//Environnement
     public function environnement(){
 
         $head['title'] = "Environnement";

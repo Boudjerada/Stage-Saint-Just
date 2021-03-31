@@ -6,7 +6,7 @@
     <!--meta permet de fourni des indications différentes du contenu de la page web -->
     <meta charset="UTF-8"><!--permet de spécifier aux navigateurs l'encodage de la page web, il s'agit là de la valeur standard qui évite les pbs d'affichages des caractères spéciaux-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0",shrink-to-fit=no>
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="<?php echo base_url("assets/css/styles.css");?>">
     <title><?= $title ?></title>
     
 

@@ -24,7 +24,7 @@
             <img src="<?php echo base_url("assets/images/MairieSJ/logomairie.png");?>"  class="mt-4 mb-5" height="250" width="250" alt="Image responsive" title="Logo Mairie"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
          </div>
          <div class="col-12 col-sm-6 d-flex justify-content-center"> 
-            <img src="<?php echo base_url("assets/images/MairieSJ/maire.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
+            <img src="<?php echo base_url("assets/images/MairieSJ/maire3.jpg");?>" height="300" width="300" alt="Image responsive" title="Maire"> <!--image esponsive s'adapte progressivement à la taille de l'ecran sans disparaitre-->
         </div>
     </div>
 
@@ -36,10 +36,10 @@
         <?php echo form_open(); ?>
             <div class="form-group">
                 
-                <label for="us_mp3"><b>Mot de passe</b></label><input type="password" class="form-control" name="us_mp3" id="us_mp3" value="<?=set_value('us_mp3');?>" placeholder="Saisir votre ancien mot de passe de connexion de 8 caractères" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
+                <label for="us_mp3"><b>Mot de passe</b></label><input type="password" class="form-control" name="us_mp3" id="us_mp3" value="<?=set_value('us_mp3');?>" placeholder="Saisir votre ancien mot de passe" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <?php echo form_error('us_mp3'); // affiche l'erreur du champs concerné?>
                 <br>
-                <label for="us_mp"><b>Nouveau Mot de passe</b></label><input type="password" class="form-control" name="us_mp" id="us_mp" value="<?=set_value('us_mp');?>" placeholder="Choisir un nouveau mot de passe de connexion de 8 caractères" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
+                <label for="us_mp"><b>Nouveau Mot de passe</b></label><input type="password" class="form-control" name="us_mp" id="us_mp" value="<?=set_value('us_mp');?>" placeholder="Choisir un nouveau mot de passe de connexion de 8 caractères au moins" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
                 <?php echo form_error('us_mp'); // affiche l'erreur du champs concerné?>
                 <br>
                 <label for="us_mp2"><b>Confirmer mot de passe</b></label><input type="password" class="form-control" name="us_mp2" id="us_mp2" placeholder="Veuillez confirmer le nouveau mot de passe de connexion" > <!--formcontrol pour mettre la zone de saisie en dessous du titre du champs-->
@@ -61,7 +61,7 @@
 //demande si on envoit ou non le formulaire au controleur
 function verif(){ 
     //Rappel : confirm() -> Bouton OK et Annuler, renvoit true ou false
-    var resultat = confirm("Etes-vous certain de vouloir valider cette inscription ?");
+    var resultat = confirm("Etes-vous certain de vouloir modifier votre ancien mot de passe ?");
     
     if (resultat==false){
         alert("Vous avez annulé la modification de votre mot de passe !");

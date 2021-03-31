@@ -305,7 +305,7 @@ public function modifserv($id){
     
     if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
-                $this->load->view('header3', $head);
+                $this->load->view('header', $head);
                 $this->load->view('MairieSJadmin/contact/modifserv', $aView);
 
             }
@@ -326,7 +326,7 @@ public function modifserv($id){
     } 
     else{ // 1er appel de la page: affichage du formulaire 
             
-            $this->load->view('header3', $head);
+            $this->load->view('header', $head);
             $this->load->view('MairieSJadmin/contact/modifserv', $aView);
           
         }
@@ -414,7 +414,7 @@ public function suppserv($id){
     } 
     else 
     { // 1er appel de la page: affichage du formulaire de suppression 
-        $this->load->view('header3', $head);
+        $this->load->view('header', $head);
         $this->load->view('MairieSJadmin/contact/suppserv',$aView);
     }
 
@@ -468,7 +468,7 @@ public function suppserv($id){
 
             if ($this->form_validation->run() == FALSE)
                 { // Echec de la validation, on réaffiche la vue formulaire
-                    $this->load->view('header3', $head);
+                    $this->load->view('header', $head);
                     $this->load->view('MairieSJadmin/contact/modifassoc', $aView);
 
                 }
@@ -489,7 +489,7 @@ public function suppserv($id){
                }
         } 
         else{ // 1er appel de la page: affichage du formulaire 
-                $this->load->view('header3', $head);
+                $this->load->view('header', $head);
                 $this->load->view('MairieSJadmin/contact/modifassoc', $aView);
               
             }
@@ -576,7 +576,7 @@ public function suppserv($id){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header3', $head);
+            $this->load->view('header', $head);
             $this->load->view('MairieSJadmin/contact/suppassoc',$aView);
         }
 
@@ -621,7 +621,7 @@ public function suppserv($id){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header3', $head);
+            $this->load->view('header', $head);
             $this->load->view('MairieSJadmin/evenement/suppeve',$aView);
         }
 
@@ -670,7 +670,7 @@ public function modifeve($id){
 
         if ($this->form_validation->run() == FALSE)
             { // Echec de la validation, on réaffiche la vue formulaire
-                $this->load->view('header3', $head);
+                $this->load->view('header', $head);
                 $this->load->view('MairieSJadmin/evenement/modifeve', $aView);
 
             }
@@ -685,7 +685,7 @@ public function modifeve($id){
            }
     } 
     else{ // 1er appel de la page: affichage du formulaire 
-        $this->load->view('header3', $head);
+        $this->load->view('header', $head);
         $this->load->view('MairieSJadmin/evenement/modifeve', $aView);
           
         }
@@ -801,7 +801,7 @@ public function modifeve($id){
   
           if ($this->form_validation->run() == FALSE)
               { // Echec de la validation, on réaffiche la vue formulaire
-                  $this->load->view('header3', $head);
+                  $this->load->view('header', $head);
                   $this->load->view('MairieSJadmin/cantine/modifPla', $aView);
   
               }
@@ -816,7 +816,7 @@ public function modifeve($id){
              }
       } 
       else{ // 1er appel de la page: affichage du formulaire 
-          $this->load->view('header3', $head);
+          $this->load->view('header', $head);
           $this->load->view('MairieSJadmin/cantine/modifPla', $aView);
             
           }
@@ -866,7 +866,7 @@ public function suppMenu($id){
     } 
     else 
     { // 1er appel de la page: affichage du formulaire de suppression 
-        $this->load->view('header3', $head);
+        $this->load->view('header', $head);
         $this->load->view('MairieSJadmin/cantine/suppMenu',$aView);
     }
 
@@ -999,7 +999,7 @@ public function ajoutMenu(){
         } 
         else 
         { // 1er appel de la page: affichage du formulaire de suppression 
-            $this->load->view('header3', $head);
+            $this->load->view('header', $head);
             $this->load->view('MairieSJadmin/cantine/supRes',$aView);
         }
 
