@@ -256,12 +256,15 @@ mail($mail, "Demande de réservation d'une salle", $message, $aHeaders);
 $_SESSION["resok"] ="ok";
  */ 
 
-$this->email->from('noreply@saintjustenchaussee.fr', $nom." ".$prenom);
-$this->email->to('com@mairie-saintjustenchaussee.fr'); 
-$this->email->subject('Demande de salle');
-$this->email->message($message);
-$this->email->send();  
-$_SESSION["resok"] ="ok";         
+$rob = $this->input->post('robot');
+if (isset($rob)) {
+
+    $this->email->from('noreply@saintjustenchaussee.fr', $nom." ".$prenom);
+    $this->email->to('com@mairie-saintjustenchaussee.fr'); 
+    $this->email->subject('Demande de salle');
+    $this->email->message($message);
+    $this->email->send();  
+    $_SESSION["resok"] ="ok";   }      
             
             
 

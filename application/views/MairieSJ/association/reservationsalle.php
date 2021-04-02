@@ -46,7 +46,7 @@
                         <option value="Opus">Opus</option>
                         <option value="Salle de la Landre">Salle de la Landre</option>
                     </select>
-                
+                <input type="hidden" name="robot" value="1"> 
                 <div class="form-check ml-3 mt-3">
                     <input class="form-check-input is-invalid" type="checkbox" value="" id="acceptation" required>
                     <label class="form-check-label" for="acceptation">J'accepte le traitement informatique de ce formulaire</label>
