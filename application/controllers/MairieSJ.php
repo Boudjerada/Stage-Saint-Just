@@ -229,13 +229,13 @@ body
 <div class='container'>
     <div class='row'>
         <div class='col-12'>
-          <h2 class='d-flex justify-content-center'>Demande de réservation d'une salle</h2>
+          <h2 class='d-flex justify-content-center'><FONT color='green'>Demande de réservation d'une salle</FONT></h2>
       </div>    
     </div> 
     <br>  
     <div class='row'>
         <div class='col-12 d-flex justify-content-center'>
-          <p>Bonjour, Je m'appelle $nom $prenom.<br>Je voudrais des informations pour éventuellement réserver la salle $salle.<br>Pouvez vous me contacter par mail $mail ou par téléphone au $tel afin que nous puissions en discuter.<br>Merci, cordialement...</p>
+          <p>Bonjour je voudrais des informations pour éventuellement réserver la salle : $salle.<br>Pouvez vous me contacter par mail $mail ou par téléphone au $tel afin que nous puissions en discuter.<br>Merci, cordialement...<br>$nom $prenom</p>
       </div>    
     </div>   
 </div> 
@@ -245,23 +245,14 @@ body
 </body>
 </html>";
 
-/*
-$aHeaders = array('MIME-Version' => '1.0',
-'Content-Type' => 'text/html; charset=utf-8',
-'From' => 'com@mairie-saintjustenchaussee.fr' ,
-'X-Mailer' => 'PHP/' . phpversion()
-);
-
-mail($mail, "Demande de réservation d'une salle", $message, $aHeaders);
-$_SESSION["resok"] ="ok";
- */ 
 
 $rob = $this->input->post('robot');
 if (isset($rob)) {
 
+  
     $this->email->from('noreply@saintjustenchaussee.fr', $nom." ".$prenom);
-    $this->email->to('com@mairie-saintjustenchaussee.fr'); 
-    $this->email->subject('Demande de salle');
+    $this->email->to('com@mairie-saintjustenchaussee.fr');  
+    $this->email->subject('Demande pour réservation de salle');
     $this->email->message($message);
     $this->email->send();  
     $_SESSION["resok"] ="ok";   }      
