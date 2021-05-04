@@ -22,13 +22,14 @@
     <script>
         
         var chrono;
+        
         function startTimer(){
 	// le second paramètre de la fonction setTimeout() est en millisecondes
 	// 1min = 1*60*1000 ms
 	// la fonction redirection() sera exécutée dans 1 min
 	// on récupère l'identifiant du timer dans chrono
 	    chrono = setTimeout("document.location = 'http://localhost/ci2/'",60000);	
-    }	
+        }	
 
     // remise à 0 du timer avec pour identifiiant le contenu de chrono, s'il y a eu un mouvement dans la page 
     // [évenement onmousemove()]

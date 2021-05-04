@@ -7,7 +7,7 @@ class AdminStJust extends CI_Controller {
 //Espace Connexion
     public function index(){
 
-        $head['title']="Connexion";
+        
 
         if ($this->input->post()){ // 2ème appel de la page: traitement du formulaire
          
@@ -22,7 +22,7 @@ class AdminStJust extends CI_Controller {
             
             if ($this->form_validation->run() == FALSE){
                
-                $this->load->view('header', $head);
+                
                 $this->load->view('MairieSJadmin/index');
             }
             else{
@@ -283,6 +283,9 @@ public function modifserv($id){
     $this->load->model('MairieSJ_model');
     $serv = $this->MairieSJ_model->serv($id);
     $aView["service"] = $serv;
+    
+    //Pour test existance unicité nom
+    $servnom3=$aView["service"]->serv_nom;
 
     if ($this->input->post()) 
     { // 2ème appel de la page: traitement du formulaire
@@ -309,20 +312,29 @@ public function modifserv($id){
                 $this->load->view('MairieSJadmin/contact/modifserv', $aView);
 
             }
-        else
-            { // La validation a réussi, nos valeurs sont bonnes, on peut modifier en base  
-     
+    else{ // La validation a réussi, nos valeurs sont bonnes, on peut modifier en base  
+            $servnom = $data['serv_nom'];
+            $servnom1 = $this->MairieSJ_model->serv1($servnom);
+            if (empty($servnom1) || ($servnom == $servnom3) ){
                /* Utilisation de la méthode where() toujours 
                * avant select(), insert() ou update()
                * dans cette configuration sur plusieurs lignes 
                */
-            $this->MairieSJ_model->ModifEnr($data,'serviceMairie','serv_id',$id);   
             //$this->db->where('serv_id',$id);
             //$this->db->update('serviceMairie', $data);
 
-            // Redirection sur la page contact association
-            redirect("AdminStJust/listecontactsmairie");
-           }
+            $this->MairieSJ_model->ModifEnr($data,'serviceMairie','serv_id',$id);
+             // Redirection sur la page contact association
+             redirect("AdminStJust/listecontactsmairie");
+            }
+            else{
+                $_SESSION['messnom']="Ce service existe déjà";
+                $this->load->view('header', $head);
+                $this->load->view('MairieSJadmin/contact/modifserv',$aView);
+
+            }
+
+        }
     } 
     else{ // 1er appel de la page: affichage du formulaire 
             
@@ -374,13 +386,21 @@ public function modifserv($id){
                    * avant select(), insert() ou update()
                    * dans cette configuration sur plusieurs lignes 
                    */
-                    
+                $servnom = $data['serv_nom'];
+                $servnom = $this->MairieSJ_model->serv1($servnom);
+                if (empty($servnom)){   
                 $this->MairieSJ_model->insEnr($data,'serviceMairie');
                 //$this->db->insert('serviceMairie', $data);
 
                 // Redirection sur la page contact association
                 redirect("AdminStJust/listecontactsmairie");
                }
+               else{
+                $_SESSION['messnom']="Ce service existe déjà";
+                $this->load->view('header', $head);
+                $this->load->view('MairieSJadmin/contact/ajoutserv');
+                }
+            }
         } 
     else{ // 1er appel de la page: affichage du formulaire 
              
@@ -448,6 +468,9 @@ public function suppserv($id){
         $ass = $this->MairieSJ_model->ass($id);
         $aView["association"] = $ass;
 
+        //Pour test existance unicité nom
+        $assnom3=$aView["association"]->ass_nom;
+
         if ($this->input->post()) 
         { // 2ème appel de la page: traitement du formulaire
     
@@ -474,19 +497,27 @@ public function suppserv($id){
                 }
             else
                 { // La validation a réussi, nos valeurs sont bonnes, on peut modifier en base  
-         
+                $assnom = $data['ass_nom'];
+                $assnom1 = $this->MairieSJ_model->ass1($assnom);
+                if (empty($assnom1) || ($assnom == $assnom3) ){
                    /* Utilisation de la méthode where() toujours 
                    * avant select(), insert() ou update()
                    * dans cette configuration sur plusieurs lignes 
                    */
                 
-                $this->MairieSJ_model->ModifEnr($data,'association','ass_id',$id);    
+                    $this->MairieSJ_model->ModifEnr($data,'association','ass_id',$id);    
                 //$this->db->where('ass_id',$id);
                 //$this->db->update('association', $data);
 
                 // Redirection sur la page contact association
-                redirect("AdminStJust/listecontactassociation");
-               }
+                    redirect("AdminStJust/listecontactassociation");
+                    }
+                else{
+                $_SESSION['messnom']="Cette association existe déjà";
+                $this->load->view('header', $head);
+                $this->load->view('MairieSJadmin/contact/modifassoc',$aView);
+                }
+            }
         } 
         else{ // 1er appel de la page: affichage du formulaire 
                 $this->load->view('header', $head);
@@ -537,15 +568,22 @@ public function suppserv($id){
                        * avant select(), insert() ou update()
                        * dans cette configuration sur plusieurs lignes 
                        */
-                        
-                    $this->MairieSJ_model->insEnr($data,'association');
+                    $assnom = $data['ass_nom'];
+                    $assnom = $this->MairieSJ_model->ass1($assnom);
+                    if (empty($assnom)){    
+                        $this->MairieSJ_model->insEnr($data,'association');
                     //$this->db->insert('association', $data);
                     
-    
                     // Redirection sur la page contact association
-                    redirect("AdminStJust/listecontactassociation");
-                   }
-            } 
+                        redirect("AdminStJust/listecontactassociation");
+                    }
+                else{
+                    $_SESSION['messnom']="Cette association existe déjà";
+                    $this->load->view('header', $head);
+                    $this->load->view('MairieSJadmin/contact/ajoutassoc');
+                }
+            }
+        } 
         else{ // 1er appel de la page: affichage du formulaire 
                 $this->load->view('header', $head);    
                 $this->load->view('MairieSJadmin/contact/ajoutassoc');

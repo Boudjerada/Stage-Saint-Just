@@ -30,7 +30,9 @@
                 <div class="form-group">
                    
                     <label for="serv_nom"><b>Nom Service :</b></label><input type="text" class="form-control" name="serv_nom" id="serv_nom" value="<?php echo set_value('serv_nom');?>">
-                    <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire?>
+                    <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire
+                        if (isset ( $_SESSION['messnom'])) echo  "<FONT color='red'>".$_SESSION['messnom']."</FONT>"."<br>"; ?>
+
                     
                     <label for="serv_tel"><b>Téléphone Service :</b></label><input type="text" class="form-control" name="serv_tel" id="serv_tel" value="<?php echo set_value('serv_tel');?>">
                     <?php echo form_error('serv_tel'); // affiche l'erreur du champs nom obligatoire?>
@@ -77,4 +79,10 @@
 </body>
 </html>
 
-<?php } ?>
+<?php } 
+
+$_SESSION['messnom']="";
+unset( $_SESSION['messnom']); 
+
+?>
+

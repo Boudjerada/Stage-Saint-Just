@@ -54,12 +54,21 @@ public function testlog($log){
     }
 
 //Service mairie affichage d'un service
+    //par id
     public function serv($id){
     
         $requete = $this->db->query("SELECT * FROM serviceMairie where serv_id= ?", $id);
         $serv = $requete->row();
         return $serv;            
-}
+    }
+
+    //par nom
+    public function serv1($serv_nom){
+    
+        $requete = $this->db->query("SELECT * FROM serviceMairie where serv_nom= ?", $serv_nom);
+        $serv = $requete->row();
+        return $serv;            
+    }
 
 //Association affichage complet
     public function association(){
@@ -70,12 +79,23 @@ public function testlog($log){
     }
 
 //Association affichage d'une assoc
+    //Par id
     public function ass($id){
         
         $requete = $this->db->query("SELECT * FROM association where ass_id= ?", $id);
         $ass = $requete->row();
         return $ass;            
     }
+
+    //Par nom
+    public function ass1($ass_nom){
+        
+        $requete = $this->db->query("SELECT * FROM association where ass_nom= ?", $ass_nom);
+        $ass = $requete->row();
+        return $ass;            
+    }
+
+
 
 
 //--------------------------------------------------------------------------

@@ -8,7 +8,6 @@ class MairieSJ extends CI_Controller {
     public function index(){
        
         function compt(){
-
             // On ouvre le fichier moncompteurjarditou.txt lecture ecriture pointeur au début
             $fichier = fopen("././././compteurBorne.txt",'r+');
             // on lit le nombre indiqué dans ce fichier dans la variable
@@ -23,9 +22,9 @@ class MairieSJ extends CI_Controller {
             fclose($fichier);
             // on indique sur la page le nombre de visiteurs
             //print("$visiteurs personnes sont passées par ici");
-           
         }
         compt();
+        
         $this->load->view('MairieSJ/accueil');
     }
 

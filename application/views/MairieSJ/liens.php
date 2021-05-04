@@ -140,7 +140,7 @@
             <h1><a class="btn-lg btn-danger d-flex justify-content-center" href="<?= base_url("index.php/MairieSJ/docAdmin");?>"><b>Documents Administratifs</b></a></h1>
         </div>
         <div class="col-12 col-lg-4">
-            <h1><a class="btn-lg btn-danger d-flex justify-content-center" href="http://saintjustenchaussee.groupehlc.com/rubrique.php?rub=153&idactu=188" target="_blank"><b>Centre de vaccination</b></a></h1>
+            <h1><a class="btn-lg btn-danger d-flex justify-content-center" href="https://www.la-mairie.com/saint-just-en-chaussee/vaccination-covid19/centre-de-vaccination-mairie-de-saint-just-en-chaussee-lopus" target="_blank"><b>Centre de vaccination</b></a></h1>
         </div>
             
         <br>

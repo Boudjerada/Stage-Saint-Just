@@ -31,7 +31,9 @@
                     <label for="ass_id"><b>Identifiant Association</b></label><input type="text" class="form-control" name="ass_id" id="ass_id" value="<?php echo $association->ass_id?>" Readonly>
                     
                     <label for="ass_nom"><b>Nom Association :</b></label><input type="text" class="form-control" name="ass_nom" id="ass_nom" value="<?php echo set_value('ass_nom', $association->ass_nom);?>">
-                    <?php echo form_error('ass_nom'); // affiche l'erreur du champs nom obligatoire?>
+                    <?php echo form_error('ass_nom'); // affiche l'erreur du champs nom obligatoire
+                    if (isset ( $_SESSION['messnom'])) echo  "<FONT color='red'>".$_SESSION['messnom']."</FONT>"."<br>"; 
+                    ?>
                     
                     <label for="ass_tel"><b>Téléphone Association:</b></label><input type="text" class="form-control" name="ass_tel" id="ass_tel" value="<?php echo set_value('ass_tel', $association->ass_tel);?>">
                     
@@ -73,4 +75,9 @@
 </body>
 </html>
 
-<?php } ?>
+<?php } 
+
+$_SESSION['messnom']="";
+unset( $_SESSION['messnom']); 
+
+?>

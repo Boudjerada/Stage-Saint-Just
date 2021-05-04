@@ -31,7 +31,8 @@
                     <label for="serv_id"><b>Identifiant Service</b></label><input type="text" class="form-control" name="serv_id" id="serv_id" value="<?php echo $service->serv_id?>" Readonly>
                     
                     <label for="serv_nom"><b>Nom Service :</b></label><input type="text" class="form-control" name="serv_nom" id="serv_nom" value="<?php echo set_value('serv_nom', $service->serv_nom);?>">
-                    <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire?>
+                    <?php echo form_error('serv_nom'); // affiche l'erreur du champs nom obligatoire
+                        if (isset ( $_SESSION['messnom'])) echo  "<FONT color='red'>".$_SESSION['messnom']."</FONT>"."<br>"; ?>
                     
                     <label for="serv_tel"><b>Téléphone du service :</b></label><input type="text" class="form-control" name="serv_tel" id="serv_tel" value="<?php echo set_value('serv_tel', $service->serv_tel);?>">
                     <?php echo form_error('serv_tel'); // affiche l'erreur du champs nom obligatoire?>
@@ -75,4 +76,9 @@
 </html>
 
 
-<?php } ?>
+<?php } 
+
+$_SESSION['messnom']="";
+unset( $_SESSION['messnom']); 
+
+?>
